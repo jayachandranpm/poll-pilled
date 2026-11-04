@@ -1,0 +1,139 @@
+/* Shared spacing for settings, editor forms and connected dialogs. */
+.btn { flex-shrink: 0; max-width: 100%; }
+.form-field { display: block; min-width: 0; }
+.form-stack { display: grid; gap: 20px; min-width: 0; }
+.form-stack > * { min-width: 0; margin: 0; }
+.form-stack .field { margin-bottom: 0; }
+.form-stack textarea.field,
+.compose-content textarea.field { height: auto; min-height: 112px; line-height: 1.55; }
+.form-stack > p { color: var(--muted); line-height: 1.55; }
+.form-stack > label:not(.consent-row) { display: block; }
+.action-row { display: flex; align-items: center; flex-wrap: wrap; gap: 10px; min-width: 0; }
+.action-row > .btn {
+  min-height: 44px; height: auto; padding: 10px 16px;
+  white-space: normal; line-height: 20px; text-align: center;
+}
+.settings-flow { display: grid; align-content: start; gap: 24px; }
+.settings-flow > * { min-width: 0; margin: 0; }
+.settings-flow .profile-card { margin: 0; }
+.settings-flow .setting-row { padding: 0; min-height: 44px; border: 0; }
+.settings-copy { display: grid; gap: 12px; }
+.settings-copy h2 { font-size: 18px; line-height: 1.4; }
+.settings-copy p { color: var(--muted); line-height: 1.6; }
+.settings-flow .action-row { margin-top: 0; }
+.settings-flow .consent-row { margin: 0; }
+.profile-card > div { min-width: 0; }
+.profile-card h2 { overflow-wrap: anywhere; }
+.dialog-body .section-actions { margin: 20px 0 24px; }
+.review-row { display: grid; gap: 12px; }
+.review-row > .btn { justify-self: start; margin-top: 4px; }
+.review-row p { overflow-wrap: anywhere; }
+.review-row audio { margin: 0; }
+.credit-row { flex-wrap: wrap; }
+.credit-row > .btn { margin-left: auto; }
+.compose-content > .upload-grid,
+.compose-content > .media-upload,
+.compose-content > .video-options { margin-top: 16px; }
+.compose-content > .btn { margin-top: 12px; white-space: normal; height: auto; min-height: 40px; padding-block: 8px; }
+.compose-content > audio { margin: 16px 0 0; width: 100%; }
+.compose-content > label:not(.upload-box) { display: block; margin-top: 20px; }
+.upload-grid > div { display: flex; flex-direction: column; gap: 8px; }
+.upload-grid > div > .btn { white-space: normal; height: auto; min-height: 40px; padding: 8px; line-height: 18px; }
+.dialog-footer .btn { min-height: 44px; }
+.dialog-header { position: sticky; top: 0; z-index: 3; background: var(--surface); }
+@media (max-width: 700px) {
+  .form-stack { gap: 18px; }
+  .settings-flow { gap: 24px; }
+  .settings-flow .profile-card { gap: 12px; }
+  .action-row > .btn { min-width: 0; }
+  .dialog-body .btn { min-height: 44px; }
+}
+@media (max-width: 380px) {
+  .settings-flow .action-row > .btn,
+  .form-stack > .action-row > .btn { flex: 1 1 100%; }
+  .credit-row { gap: 16px; }
+  .profile-card img { width: 52px; height: 52px; }
+}
+
+/* One geometry for paired actions, page navigation and dialog dismissals. */
+.page-heading{display:flex;align-items:center;gap:10px;min-width:0}
+.page-heading h1{overflow-wrap:anywhere}
+.page-heading>.icon-btn{flex:none;margin-left:-8px;width:40px;height:44px}
+.thread-column-head>.btn{min-height:40px}
+.workspace-next .workspace-actions{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin:0 0 20px}
+.workspace-actions>.btn{width:100%;min-width:0;height:auto;min-height:44px;padding:10px 8px;gap:8px;font-size:13px;line-height:20px;white-space:normal}
+.workspace-actions>.btn>.icon{width:18px;height:18px;flex:none}
+.workspace-actions>.btn>span:not(.icon){overflow-wrap:anywhere}
+.thread-author .author-name{font-size:13px;line-height:20px}
+.thread-author .author-tagline{font-size:12px;line-height:18px}
+.thread-question{font-size:16px;font-weight:600;line-height:1.45;margin-top:6px}
+.thread-poll-meta{flex-wrap:wrap;gap:8px;margin:8px 0 14px}
+.thread-poll-meta .poll-origin{color:var(--muted)}
+.response-reason{border-top:1px solid var(--line);margin:16px 0 0}
+.response-reason>summary{padding:8px 0;border-radius:0;background:transparent;min-height:44px}
+.response-reason>summary small{margin-left:auto}
+.response-reason>summary .disclosure-chevron{margin-left:4px}
+.response-reason[open]>summary .disclosure-chevron{transform:rotate(45deg)}
+.response-reason .disclosure-body{padding:0 0 12px}
+.response-reason .field{height:auto;min-height:88px;line-height:1.5;margin:0;resize:vertical}
+.reason-input{display:block}
+.reason-tools{display:flex;flex-wrap:wrap;align-items:center;gap:4px;margin:8px -8px}
+.reason-tools>.btn{height:auto;min-height:40px;min-width:0;padding:8px;gap:6px;font-size:12px;line-height:18px}
+.reason-tools .icon{width:16px;height:16px}
+.poll-disclosure .disclosure-body>.reason-privacy{font-size:12px;color:var(--muted);margin:8px 0 0}
+.response-reason .consent-row{margin-top:10px}
+.response-reason audio{width:100%;margin:8px 0}
+.recording-status{display:flex;align-items:center;flex-wrap:wrap;gap:8px}
+.recording-status .btn{margin-left:auto}
+.dialog-header{grid-template-columns:minmax(0,1fr) 40px;gap:12px;align-items:center}
+.dialog-header h2{text-align:left;font-size:17px;line-height:1.35;overflow-wrap:anywhere}
+.dialog-header .dialog-close{width:40px;height:40px;justify-self:end}
+.dialog-footer{display:flex;align-items:center;justify-content:flex-end;flex-wrap:wrap;gap:10px}
+.dialog-footer>.btn{height:auto;min-height:44px;max-width:100%;white-space:normal;line-height:20px;padding:10px 16px}
+.compose-content>.field-label[for=editor-title]{margin-top:16px;margin-bottom:6px}
+.creation-panel .compose-question{min-height:96px;padding:0;font-size:20px;line-height:1.45}
+.creation-panel .compose-toolbar{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:6px;padding:12px 0;margin:0 0 12px;overflow:visible}
+.compose-toolbar .format-tool{display:flex;flex-direction:column;justify-content:center;gap:5px;width:100%;height:auto;min-height:64px;border:1px solid var(--line);border-radius:10px;padding:8px 4px;background:var(--surface)}
+.compose-toolbar .format-tool .tool-label{display:block;position:static;transform:none;visibility:visible;opacity:1;background:none;border:0;box-shadow:none;padding:0;margin:0;color:inherit;font-size:11px;line-height:15px;white-space:normal;text-align:center}
+.compose-toolbar .format-tool[aria-pressed=true]{background:var(--tint);border-color:var(--accent-border);color:var(--text)}
+.compose-format-label{display:none}
+.ai-editor-actions{display:flex;flex-wrap:wrap;gap:8px;margin:8px 0 20px}
+.decision-starters{display:flex;flex-wrap:wrap;gap:6px}
+.decision-starters .btn{min-width:0;height:auto;min-height:36px;font-size:12px;line-height:18px;padding:8px 10px;white-space:normal}
+.compose-footer{display:flex;gap:10px;justify-content:flex-end;flex-wrap:wrap}
+.compose-footer .btn{min-height:44px}
+@media(max-width:700px){
+ .dialog-header{grid-template-columns:minmax(0,1fr) 40px;gap:12px}
+ .dialog-header h2{font-size:17px}
+ .creation-panel .compose-toolbar{grid-template-columns:repeat(3,minmax(0,1fr))}
+ .creation-panel .compose-question{font-size:18px}
+}
+@media(max-width:380px){
+ .reason-tools>.btn{flex:1 1 auto}
+ .dialog-footer>.btn{flex:1 1 auto}
+ .compose-toolbar .format-tool{min-height:62px}
+}
+
+.dialog-header{height:auto;min-height:64px;padding-block:10px}
+.dialog-footer .btn,.compose-footer .btn{border-radius:10px}
+.thread-poll-footer .btn{min-height:40px;height:40px;font-size:14px;padding-inline:16px}
+@media(max-width:700px){.thread-poll-footer .btn{min-height:44px;height:44px}}
+
+/* Let titles wrap without scattering row actions across narrow layouts. */
+.poll-row .poll-row-actions{display:flex;flex-wrap:wrap;align-items:center;justify-content:flex-end;gap:6px;max-width:100%}
+.poll-row-copy h3,.workspace-poll-row strong{overflow-wrap:anywhere}
+.poll-row .poll-row-actions>.btn{min-height:44px;height:auto;white-space:normal}
+.dialog-header{grid-template-columns:minmax(0,1fr) 44px}
+.dialog-header .dialog-close,.page-heading>.icon-btn{width:44px;height:44px}
+.reason-tools>.btn{min-height:44px}
+.audio-upload-control:focus-within{outline:2px solid var(--accent-border);outline-offset:2px}
+@media(max-width:600px){
+ .poll-row .poll-row-actions{flex:1 0 100%;justify-content:flex-start;padding-left:0}
+ .poll-row .poll-row-actions>.btn{flex:1 1 auto}
+ .rank-row .icon-btn{width:44px;height:44px}
+}
+
+/* Topic labels remain visible instead of spilling outside the editor. */
+.topic-picks{flex-wrap:wrap}
+.topic-picks .chip{min-height:44px;max-width:100%;white-space:normal}
+@media(max-width:700px){.settings-single .page-heading>.icon-btn{display:none}}

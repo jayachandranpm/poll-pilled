@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#fbfbfb">
+  <meta name="description" content="Good questions. Different perspectives. Vote, share a voice take, and hear the other side.">
+  <title>Poll Pilled — Good questions. Different perspectives.</title>
+  <link rel="icon" href="/static/icons/chart-square-linear.svg" type="image/svg+xml">
+  <link rel="preload" href="/static/fonts/inter-regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/static/css/style.css?v=sage-marketplace-2">
+  <link rel="stylesheet" href="/static/css/marketplace.css?v=sage-marketplace-2">
+  <script src="/static/js/app.js?v=sage-marketplace-2" defer></script>
+  <script src="/static/js/marketplace.js?v=sage-marketplace-2" defer></script>
+  <script src="/static/js/selects.js?v=sage-marketplace-2" defer></script>
+  <script src="/static/js/settings.js?v=sage-marketplace-2" defer></script>
+  <script src="/static/js/audio-player.js?v=sage-marketplace-2" defer></script>
+  <script src="/static/js/community.js?v=sage-marketplace-2" defer></script>
+  <link rel="stylesheet" href="/static/css/controls.css?v=sage-marketplace-2">
+  <link rel="stylesheet" href="/static/css/mobile.css?v=sage-marketplace-2">
+  <script src="/static/js/mobile.js?v=sage-marketplace-2" defer></script>
+  <script src="/static/js/product.js?v=sage-marketplace-2" defer></script>
+  <link rel="stylesheet" href="/static/css/product.css?v=sage-marketplace-2">
+  <script src="/static/js/experience.js?v=sage-marketplace-2" defer></script>
+  <link rel="stylesheet" href="/static/css/experience.css?v=sage-marketplace-2">
+</head>
+<body class="app-loading" aria-busy="true">
+<div id="workspace-loading" role="status"><span class="inline-spinner"></span>Opening your workspace…</div>
+<a class="skip-link" href="#main">Skip to polls</a>
+<aside class="sidebar" id="sidebar" aria-label="Workspace navigation">
+  <div class="workspace-header">
+    <button class="brand" data-action="workspace" aria-label="Choose participant or publisher workspace" aria-haspopup="menu" aria-expanded="false"><span data-icon="chart-square-linear"></span><span>Poll Pilled<small id="workspace-label">Participant workspace</small></span><span data-icon="alt-arrow-down-linear"></span></button>
+    <button class="icon-button sidebar-collapse" data-action="collapse-nav" aria-label="Collapse sidebar"><span data-icon="arrow-left-linear"></span></button>
+  </div>
+  <div class="sidebar-search"><label class="search-box"><span data-icon="magnifer-linear"></span><input id="search" type="search" placeholder="Search polls" aria-label="Search polls"><kbd>/</kbd></label></div>
+  <nav class="main-nav" aria-label="Main navigation">
+    <button class="nav-item active" data-view="explore" aria-label="Discover" aria-current="page"><span data-icon="home-smile-linear"></span><span class="nav-text">Discover</span></button>
+    <button class="nav-item" data-view="lounge" aria-label="Voice lounge"><span data-icon="microphone-3-linear"></span><span class="nav-text">Voice lounge</span><span class="new-label">New</span></button>
+    <button class="nav-item" data-view="wallet" aria-label="My rewards"><span data-icon="wallet-money-linear"></span><span class="nav-text">My rewards</span><span class="reward-dot"></span></button>
+    <button class="nav-item" data-view="publisher" aria-label="Publisher studio"><span data-icon="chart-square-linear"></span><span class="nav-text">Publisher studio</span><span class="nav-count" id="my-polls-count">0</span></button>
+  </nav>
+  <div class="sidebar-action"><button class="button coral sidebar-create" data-action="create" aria-label="Create a poll"><span data-icon="add-linear"></span><span class="nav-text">Create a poll</span><kbd>C</kbd></button></div>
+  <div class="sidebar-bottom"><button class="wallet-nudge" data-view="wallet"><span data-icon="wallet-money-linear"></span><span><small>Your demo rewards</small><strong id="sidebar-points">0 pts</strong></span><span data-icon="arrow-right-linear"></span></button>
+    <div class="participation"><span class="participation-label">Your participation</span><div class="personal-stats"><button data-view="voted"><strong id="stat-votes">0</strong><span>votes</span></button><button data-view="mine"><strong id="stat-polls">0</strong><span>polls</span></button><button data-view="saved"><strong id="stat-saved">0</strong><span>saved</span></button></div></div>
+    <button class="nav-item sidebar-help" data-action="help" aria-label="Help & guides"><span data-icon="question-circle-linear"></span><span class="nav-text">Help & guides</span></button>
+    <button class="profile-button" data-action="settings" aria-label="Your profile and settings" aria-haspopup="menu" aria-expanded="false"><span class="avatar profile-avatar blue">CH</span><span class="profile-copy"><strong id="profile-name">Curious human</strong><span>Your personal workspace</span></span><span data-icon="alt-arrow-down-linear"></span></button>
+    <div class="workspace-footnote"><span>Local demo · no real payments</span><button data-action="credits">Credits</button><span class="sr-only" id="saved-count">0</span><span class="sr-only" id="year">2026</span></div>
+  </div>
+</aside>
+<nav class="mobile-community-rail" id="mobile-rail" aria-label="Communities and workspaces"></nav>
+<div class="app-shell">
+  <header class="mobile-app-header"><div class="mobile-heading"><button id="mobile-back" class="icon-button" data-mobile-action="back" aria-label="Back" hidden><span data-icon="arrow-left-linear"></span></button><h1 id="mobile-page-title">Polls</h1><button id="mobile-room-reply" class="icon-button" data-action="focus-take" aria-label="Add a perspective" hidden><span data-icon="chat-round-line-linear"></span></button></div><div class="workspace-switch" role="group" aria-label="Choose your workspace"><button data-workspace="participant" aria-pressed="true">Answer</button><button data-workspace="publisher" aria-pressed="false">Publish</button></div><div class="mobile-header-actions" id="mobile-actions"><button class="icon-button" id="mobile-search-toggle" data-mobile-action="search" aria-label="Search polls" aria-controls="mobile-search-box" aria-expanded="false"><span data-icon="magnifer-linear"></span></button><button class="mobile-topics-button" data-action="interests"><span data-icon="users-group-rounded-linear"></span>My topics</button><button class="mobile-create-button" data-action="create" aria-label="Create a poll"><span data-icon="add-linear"></span></button></div><div id="mobile-search-box" class="mobile-search-box" hidden><input id="mobile-search" type="search" placeholder="Find a conversation" aria-label="Find a conversation"><button class="icon-button" data-mobile-action="clear-search" aria-label="Clear search"><span data-icon="close-circle-linear"></span></button></div></header>
+  <header class="topbar">
+    <div class="header-location"><button class="icon-button mobile-menu" data-action="menu" aria-label="Open navigation" aria-controls="sidebar" aria-expanded="false"><span data-icon="hamburger-menu-linear"></span></button><span id="breadcrumb-icon" data-icon="home-smile-linear"></span><span id="breadcrumb-current">Community</span><span class="demo-label">DEMO</span></div>
+    <div class="topbar-right"><div class="workspace-switch" role="group" aria-label="Choose your workspace"><button data-workspace="participant" aria-pressed="true">Answer</button><button data-workspace="publisher" aria-pressed="false">Publish</button></div><button class="header-wallet" data-view="wallet" aria-label="Open my rewards"><span data-icon="wallet-money-linear"></span><span id="header-points">0 pts</span></button><button class="header-wallet header-credit" data-view="credits" aria-label="Open publisher credits"><span data-icon="card-linear"></span><span id="header-credits">0 credits</span></button><button class="icon-button" data-view="saved" aria-label="Saved polls"><span data-icon="bookmark-linear"></span></button><button class="button outline header-assist" data-action="studio"><span data-icon="stars-linear"></span>AI studio</button></div>
+  </header>
+  <main id="main" class="main-content">
+    <section class="mobile-discovery" aria-label="Quick destinations"><div class="mobile-channel-shortcuts"><button class="mobile-channel-shortcut" data-view="explore" aria-pressed="true"><span class="shortcut-icon shortcut-blue"><span data-icon="chat-round-line-linear"></span></span><strong>For you</strong></button><button class="mobile-channel-shortcut" data-view="lounge" aria-pressed="false"><span class="shortcut-icon shortcut-purple"><span data-icon="microphone-3-linear"></span></span><strong>Voice</strong></button><button class="mobile-channel-shortcut" data-view="saved" aria-pressed="false"><span class="shortcut-icon shortcut-peach"><span data-icon="bookmark-linear"></span></span><strong>Saved</strong></button></div><div class="mobile-list-heading"><h2 id="mobile-result-label">Conversations</h2><span class="mobile-demo-label">Demo</span></div><div id="mobile-poll-list"></div></section>
+    <div class="page-intro"><div class="intro-kicker">THE COMMUNITY HAS QUESTIONS. YOU HAVE A TAKE.</div><h1 id="page-title">Make your voice count.</h1><p id="page-description">Pick a side. Tell us why. Get a little something back.</p></div>
+    <section class="reward-hero" id="hero" aria-label="Earn from community polls">
+      <div class="reward-hero-copy"><span class="reward-eyebrow"><span data-icon="stars-linear"></span>GOOD TAKES DESERVE A THANK YOU</span><h2>200 points for <br>your two cents.</h2><p>Every community poll has a reward.<br>Add your voice for another 100 points.</p><div><button class="button coral" data-action="browse-rewards">Find my next poll<span data-icon="arrow-right-linear"></span></button><button class="text-button" data-action="reward-rules">How rewards work</button></div></div>
+      <div class="hero-wallet"><span class="hero-wallet-icon" data-icon="wallet-money-linear"></span><span>Your demo balance</span><strong id="hero-points">0 <small>pts</small></strong><span id="hero-cash">₹0.00 demo value</span><button data-view="wallet">Open my rewards<span data-icon="arrow-right-linear"></span></button><div class="wallet-goal"><span id="wallet-goal-text">500 pts unlock a demo redemption</span><progress id="wallet-goal-progress" max="500" value="0"></progress></div></div>
+    </section>
+    <div class="community-strip"><span><span class="live-dot"></span><strong id="community-polls">0</strong> open polls</span><span><strong id="community-takes">0</strong> perspectives</span><span><strong id="pulse-votes">0</strong> community votes</span><button data-action="interests">My topics<span data-icon="alt-arrow-right-linear"></span></button></div>
+    <section class="feed-section" aria-labelledby="feed-title">
+      <div class="section-top"><h2 id="feed-title">More polls</h2><button class="text-button" id="reset-feed" data-action="reset"><span data-icon="refresh-linear"></span>Refresh</button></div>
+      <div class="feed-toolbar"><div class="feed-tabs" role="tablist" aria-label="Poll format"><button class="feed-tab active" role="tab" aria-selected="true" data-format=""><span data-icon="widget-2-linear"></span>All polls</button><button class="feed-tab" role="tab" aria-selected="false" data-format="voice"><span data-icon="microphone-3-linear"></span>Voice</button><button class="feed-tab" role="tab" aria-selected="false" data-format="image"><span data-icon="gallery-linear"></span>Visual</button><button class="feed-tab" role="tab" aria-selected="false" data-format="interactive"><span data-icon="tuning-2-linear"></span>Interactive</button></div><div class="sort-wrapper"><span data-icon="tuning-2-linear"></span><select id="sort" aria-label="Sort polls"><option value="trending">Trending</option><option value="newest">Newest</option><option value="closing">Closing soon</option></select><span data-icon="alt-arrow-down-linear"></span></div></div>
+      <div class="category-chips" id="category-chips" aria-label="Filter by topic"></div>
+      <div class="active-filter" id="active-filter" hidden></div>
+      <div class="poll-grid" id="poll-grid" aria-live="polite"><div class="skeleton-card"></div><div class="skeleton-card"></div></div>
+      <div class="feed-end" id="feed-end"><span data-icon="chat-round-line-linear"></span><span>Something on your mind?</span><button data-action="create">Create a poll<span data-icon="arrow-right-linear"></span></button></div>
+    </section>
+    <footer class="page-footer"><span>Poll Pilled</span><div><button data-action="data-policy">Poll data use</button><button data-action="credits">Credits</button></div></footer>
+  </main>
+</div>
+<div class="mobile-profile-bar" id="mobile-profile-bar"><button class="mobile-profile-open" data-mobile-action="profile" aria-label="Your profile and settings"><span id="mobile-profile-avatar"></span><span class="mobile-profile-copy"><strong id="mobile-profile-name">Your profile</strong><small id="mobile-profile-subtitle">Local demo</small></span><span data-icon="alt-arrow-down-linear"></span></button><button class="mobile-profile-wallet" data-view="wallet" aria-label="My rewards"><span data-icon="wallet-money-linear"></span><span id="mobile-wallet-value">0</span></button></div>
+<div id="modal-root"></div>
+<div class="toast-stack" id="toasts" aria-live="polite"></div>
+</body>
+</html>

@@ -1,0 +1,215 @@
+/* Shared component contract, measured from bsky.app on 2026-10-31.
+   Loaded after page geometry so old route styles cannot shrink shared controls.
+   Poll-specific canvases retain their layout; controls use Bluesky ALF tokens. */
+.reference-app { --menu-text: #232e3e; --control-muted: #8798b0; }
+.reference-app[data-color-mode=dark] { --menu-text: var(--text); --control-muted: var(--muted); }
+.reference-app .button,
+.reference-app :is(.studio-draft-tools,.settings-save-bar,.wallet-clear,.take-submit,.modal-footer) .button {
+ min-height: 44px; padding: 12px 24px; border: 0; border-radius: 999px;
+ font-size: var(--text-md); line-height: 20px; font-weight: 500; gap: 6px;
+ box-shadow: none; transform: none;
+}
+.reference-app .button:is(.text,.ghost) { padding: 8px 12px; background: transparent; color: var(--accent-strong); }
+.reference-app .button:is(.secondary,.soft) { background: var(--soft); color: var(--text); }
+.reference-app .button:is(.secondary,.soft):hover:not(:disabled) { background: var(--border); }
+.reference-app .button:disabled { background: var(--soft); color: var(--muted); opacity: 1; }
+.reference-app .button:is(.text,.ghost):disabled { background: transparent; }
+.reference-app .button > span { gap: 8px; }
+.reference-app .icon-button { width: 44px; height: 44px; min-width: 44px; min-height: 44px; padding: 10px; border-radius: 999px; }
+.reference-app .icon-button:hover:not(:disabled) { background: var(--soft); }
+
+/* One menu style and one selection mark, whether in a page or a dialog. */
+.reference-app .select-trigger { min-height: 44px; height: 44px; padding: 10px 12px; gap: 8px; border-radius: 8px; font-size: var(--text-md); line-height: 20px; font-weight: 500; }
+.reference-app .select-trigger > span:not(.icon) { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.reference-app .select-trigger > .icon { flex-shrink: 0; }
+.reference-app .select-trigger[aria-expanded=true] { background: var(--soft); }
+.reference-app .select-menu { z-index: 500; padding: 4px; border: 1px solid var(--border); border-radius: 8px; background: var(--surface); box-shadow: var(--shadow-panel); overscroll-behavior: contain; overflow-y: auto; }
+.reference-app .select-menu > button { display: flex; align-items: center; width: 100%; min-height: 36px; padding: 8px 10px; gap: 16px; border: 0; border-radius: 4px; font-size: 13.1px; line-height: 17px; font-weight: 600; text-align: left; background: transparent; color: var(--menu-text); }
+.reference-app .select-menu > button:is(:hover,:focus-visible) { background: var(--soft); outline: none; }
+.reference-app .select-menu > button[aria-selected=true] { color: var(--menu-text); }
+.reference-app .select-radio { width: 20px; height: 20px; flex: 0 0 20px; margin-left: auto; border: 1px solid var(--border-strong); border-radius: 50%; position: relative; background: var(--surface); }
+.reference-app .select-radio.selected::after { content: ''; position: absolute; inset: 2px; border-radius: 50%; background: var(--accent); }
+.reference-app .pool-choice-mark:not(.multiple) { position: relative; border: 1px solid var(--border-strong); background: var(--surface); }
+.reference-app .pool-choice-mark.checked:not(.multiple)::after { content: ''; position: absolute; inset: 2px; border-radius: 50%; background: var(--accent); }
+.reference-app .segmented { padding: 4px; gap: 0; border-radius: 12px; background: var(--soft); }
+.reference-app .segmented > button { min-height: 40px; padding: 4px 8px; gap: 8px; border-radius: 8px; font-size: var(--text-md); line-height: 20px; font-weight: 500; color: var(--control-muted); }
+.reference-app .segmented > button.selected { background: var(--surface); color: var(--text); box-shadow: 0 2px 4px #00000008; }
+.reference-app .page-tabs > button,
+.reference-app .sky-feed-tabs > button { font-size: var(--text-md); line-height: 20px; font-weight: 600; min-height: 47px; }
+.reference-app .page-tabs > button { position: relative; }
+.reference-app .page-title-row h2,
+.reference-app .sky-feed-header .page-title-row h2 { font-size: 20px; line-height: 24px; font-weight: 600; }
+.reference-app .workspace-link { border-radius: 999px; }
+.reference-app .workspace-link.active { background: transparent; }
+.reference-app .workspace-link:hover { background: var(--soft); }
+
+/* Search is one quiet filled field, as in the reference, without nested borders. */
+.reference-app .poll-search { height: 44px; border: 1px solid transparent; border-radius: 12px; background: var(--soft); padding-inline: 12px; }
+.reference-app .poll-search:focus-within { border-color: var(--focus); box-shadow: 0 0 0 1px var(--focus); }
+.reference-app .poll-search input[type=search] { padding: 0; border: 0; border-radius: 0; min-height: 0; height: 42px; background: transparent; font-size: var(--text-md); box-shadow: none; }
+.reference-app .poll-search input[type=search]:focus-visible { border: 0; box-shadow: none; }
+
+/* Topics are direct filters; selecting one never opens a sheet or moves tools. */
+.reference-app .discover-topic-row { display: flex; align-items: center; gap: 8px; min-width: 0; margin-top: 8px; }
+.reference-app .topic-filter-nav { display: flex; align-items: center; gap: 4px; flex: 1; min-width: 0; overflow-x: auto; scrollbar-width: thin; overscroll-behavior-x: contain; padding-block: 2px; }
+.reference-app .topic-filter-nav > button { flex: 0 0 auto; min-height: 36px; padding: 8px 14px; border: 0; border-radius: 999px; font-size: 13px; line-height: 20px; font-weight: 500; color: var(--muted); background: transparent; white-space: nowrap; }
+.reference-app .topic-filter-nav > button:hover { background: var(--soft); color: var(--text); }
+.reference-app .topic-filter-nav > button[aria-pressed=true] { background: var(--soft); color: var(--text); font-weight: 600; }
+.reference-app .topic-filter-nav > button:focus-visible { outline-offset: -2px; }
+.reference-app .discover-context { margin-top: 0; gap: 8px 16px; min-height: 36px; }
+.reference-app .discover-context > button { min-height: 36px; padding: 8px 0; gap: 4px; font-size: 13px; line-height: 20px; }
+.reference-app .discover-context > button:hover { color: var(--accent-strong); }
+.reference-app .discover-context > .discover-count { font-size: 13px; }
+.reference-app .discover-context [aria-expanded=true] > .icon:last-child { transform: rotate(180deg); }
+.reference-app .feed-explanation { margin: 4px 0 12px; padding: 12px 16px; border: 1px solid var(--border); border-radius: 8px; font-size: var(--text-sm); line-height: 1.5; color: var(--muted); }
+.reference-app .feed-explanation[hidden] { display: none; }
+.reference-app .active-filters { margin: 4px 0 0; padding: 0; gap: 4px; }
+.reference-app .active-filters > button { min-height: 36px; padding: 8px 12px; border: 0; background: var(--soft); font-size: 13px; line-height: 20px; }
+
+/* Player, caption and disclosure are distinct rows. Expanding text grows the
+   card naturally; playback and answer updates do not own the expanded state. */
+.reference-app .real-audio { display: block; min-width: 0; margin: 0 0 8px; border: 1px solid var(--border); border-radius: 12px; background: var(--surface); overflow: hidden; }
+.reference-app .audio-control { display: flex; align-items: center; gap: 12px; padding: 12px; border-radius: 0; background: var(--soft); }
+.reference-app .audio-play { min-height: 44px; height: 44px; min-width: 102px; width: auto; padding: 8px 12px; gap: 8px; font-size: var(--text-sm); line-height: 20px; border-radius: 999px; white-space: nowrap; flex-shrink: 0; }
+.reference-app .audio-play > .icon { flex-shrink: 0; }
+.reference-app .audio-play:hover { background: var(--tint); }
+.reference-app .audio-clock { font-size: 13px; line-height: 17px; font-variant-numeric: tabular-nums; }
+.reference-app .audio-caption { display: block; padding: 8px 12px 0; font-size: 13px; line-height: 18px; color: var(--muted); }
+.reference-app .audio-caption:last-child { padding-bottom: 12px; }
+.reference-app .audio-transcript { margin: 0; }
+.reference-app .audio-transcript > button { display: flex; align-items: center; gap: 8px; min-height: 44px; width: 100%; padding: 8px 12px; border: 0; border-radius: 0; text-align: left; font-size: var(--text-sm); line-height: 20px; color: var(--accent-strong); background: transparent; }
+.reference-app .audio-transcript > button:hover { background: var(--hover); }
+.reference-app .audio-transcript > button:focus-visible { outline-offset: -3px; }
+.reference-app .audio-transcript > button > .icon { margin-left: auto; flex-shrink: 0; transition: transform var(--motion-state); }
+.reference-app .audio-transcript > button[aria-expanded=true] > .icon { transform: rotate(180deg); }
+.reference-app .audio-transcript-text { padding: 0 12px 16px; }
+.reference-app .audio-transcript-text[hidden] { display: none; }
+.reference-app .audio-transcript-text > p { margin: 0; font-size: var(--text-md); line-height: 1.5; white-space: pre-wrap; overflow-wrap: anywhere; color: var(--text); }
+
+/* Poll-only components borrow the reference's embedded-card and field shapes. */
+.reference-app .refined-poll-list .poll-list-item,
+.reference-app .polls-page .refined-poll-list .poll-list-item,
+.reference-app .polls-page .draft-card,
+.reference-app .publisher-page .feature-card,
+.reference-app .ai-connections .feature-card { border-radius: 12px; box-shadow: none; }
+.reference-app .taking-card .classic-option,
+.reference-app .taking-card .visual-option,
+.reference-app .studio-formats > button,
+.reference-app .interaction-modes > button,
+.reference-app .format-preferences > button,
+.reference-app .topic-grid > button { border-radius: 8px; box-shadow: none; }
+.reference-app .taking-card .classic-option { min-height: 48px; font-size: var(--text-md); line-height: 20px; }
+.reference-app .taking-card .classic-option:not(.selected) { background: var(--surface); }
+.reference-app .taking-card .classic-option:hover:not(:disabled):not(.selected) { background: var(--soft); border-color: var(--border-strong); }
+.reference-app .taking-card .classic-option.selected:hover:not(:disabled),
+.reference-app .taking-card .classic-option.selected { background: var(--tint); border-color: var(--accent); }
+.reference-app .taking-card .visual-option > span { font-size: var(--text-sm); line-height: 20px; }
+.reference-app .answer-explanation > summary,
+.reference-app :is(.response-data-note,.inline-evidence,.setup-disclosure) > summary { display: flex; align-items: center; gap: 8px; min-height: 44px; font-size: var(--text-sm); line-height: 20px; cursor: pointer; }
+.reference-app .answer-explanation > summary > span:not(.icon) { font-size: 13px; }
+.reference-app .response-data-note > summary > .icon { margin-left: auto; }
+.reference-app :is(.response-data-note,.inline-evidence,.setup-disclosure) > p { margin: 0 0 12px; font-size: var(--text-sm); line-height: 1.5; }
+.reference-app .result-reactions button { min-height: 36px; padding: 8px 12px; font-size: 13px; line-height: 20px; border-radius: 999px; }
+.reference-app .result-reactions button small { font-size: 13px; }
+.reference-app[data-color-mode=dark] .result-reactions button[aria-pressed=true] { color: var(--accent-strong); }
+.reference-app .format-preferences > button,
+.reference-app .studio-formats > button b { font-size: var(--text-sm); line-height: 20px; }
+.reference-app .studio-formats > button small { font-size: 13px; line-height: 17px; }
+.reference-app .settings-home nav { gap: 0; }
+.reference-app .settings-home nav button { border: 0; border-radius: 0; font-size: var(--text-md); }
+.reference-app .settings-home nav button:hover { background: var(--soft); }
+/* Saved and My polls are lists, using the reference's edge-to-edge rows. */
+.reference-app .polls-page .refined-poll-list,
+.reference-app .view-saved .refined-poll-list { padding: 0; }
+.reference-app .refined-poll-list .poll-list-item,
+.reference-app .polls-page .refined-poll-list .poll-list-item,
+.reference-app .polls-page .draft-card { width: 100%; margin: 0; padding: 16px var(--workspace-gutter); border: 0; border-bottom: 1px solid var(--border); border-radius: 0; background: var(--surface); }
+.reference-app .refined-poll-list .poll-list-item:hover,
+.reference-app .polls-page .draft-card:hover { background: var(--hover); }
+.reference-app .modal { border-radius: 8px; border: 1px solid var(--border); }
+.reference-app .modal > header h2 { font-size: 20px; line-height: 24px; font-weight: 600; }
+.reference-app .modal-body > p { font-size: var(--text-md); line-height: 1.5; }
+.reference-app .modal-body textarea,
+.reference-app .modal-body input:not([type=checkbox]):not([type=range]) { border-radius: 8px; font-size: var(--text-md); }
+
+@media (max-width:700px), (pointer:coarse) {
+ .reference-app .select-menu > button { min-height: 44px; }
+ .reference-app .topic-filter-nav > button,
+ .reference-app .discover-context > button,
+ .reference-app .active-filters > button,
+ .reference-app .result-reactions button { min-height: 44px; }
+}
+@media (max-width:700px) {
+ .reference-app .discover-context { gap: 8px; }
+ .reference-app .topic-filter-nav { scrollbar-width: none; }
+ .reference-app .topic-filter-nav::-webkit-scrollbar { display: none; }
+ .reference-app .discovery-control-row { gap: 8px; }
+ .reference-app .discover-filter-group .custom-select { flex: 1; min-width: 0; }
+ .reference-app .discover-filter-group .select-trigger { width: 100%; }
+ .reference-app .modal.fullscreen-preview { border-radius: 0; }
+}
+@media (prefers-reduced-motion:reduce) {
+ .reference-app .audio-transcript > button > .icon { transition: none; }
+}
+
+/* Continuous source surfaces: only embedded media and dialogs have outer corners. */
+.reference-app .taking-card,.reference-app .poll-grid .taking-card {
+ border:0; border-bottom:1px solid var(--border); border-radius:0;
+ box-shadow:none; background:var(--surface); margin:0; overflow:visible;
+}
+.reference-app .taking-card:hover { border-color:var(--border); box-shadow:none; transform:none; }
+.reference-app .wallet-overview :is(.workspace-card,.impact-card,.wallet-guide,.earnings-card,.publishing-balance) { border-radius:0; box-shadow:none; }
+.reference-app .settings-home nav { display:block; padding-block:8px; }
+.reference-app .settings-home nav button { width:100%; padding:12px 20px; min-height:48px; gap:12px; }
+.reference-app .settings-home nav button>.icon:last-child { color:var(--muted); }
+.reference-app .sky-feed-header .page-heading { text-align:center; }
+.reference-app .sky-feed-header .page-title-row { justify-content:center; }
+.reference-app .sky-feed-header .page-title-row h2 { color:var(--accent); }
+.reference-app .sky-feed-tabs { padding:0; gap:0; }
+.reference-app .sky-feed-tabs>button { flex:1; justify-content:center; }
+.reference-app .sky-feed-header .sky-menu-trigger { position:absolute; left:8px; }
+.reference-app .sky-feed-header .page-header-actions { position:absolute; right:8px; }
+.reference-app .publisher-page .feature-card { border:0; border-bottom:1px solid var(--border); border-radius:0; padding-inline:0; }
+.reference-app .publisher-page .page-tabs { margin-inline:calc(-1 * var(--workspace-gutter)); width:calc(100% + 2 * var(--workspace-gutter)); }
+.reference-app .publisher-page .published-preview { border-radius:8px; }
+.reference-app .empty-state { max-width:100%; padding:40px 24px; }
+.reference-app .empty-state h2 { font-size:20px; line-height:26px; margin:0 0 8px; }
+.reference-app .empty-state p { max-width:320px; margin:0 auto 20px; font-size:var(--text-md); line-height:22px; color:var(--muted); }
+.reference-app.connection-screen>.illustration { width:200px; height:150px; margin:auto; }
+.reference-app .discovery-control-row { grid-template-columns:minmax(0,1fr); }
+.reference-app .discover-filter-group .custom-select { width:auto; }
+.reference-app .discover-filter-group .select-trigger { font-size:var(--text-md); }
+.reference-app .sky-feed-tabs [aria-current=page]>span:after { width:56px; }
+.reference-app .editor-shell { background:var(--surface); }
+.reference-app .wallet-overview :is(.section-heading,.ledger-row,.ledger-caption,.inbox-row,.impact-card,.wallet-guide) { padding-inline:var(--workspace-gutter); }
+.reference-app .empty-state .button { margin-top:0; }
+@media (min-width:701px) {
+ .reference-app .discovery-control-row { grid-template-columns:minmax(0,1fr) 280px; }
+}
+.reference-app[data-color-mode=dark] .workspace-link.active { color:var(--text); }
+.reference-app .publisher-page .publisher-panel>.page-tabs { padding-inline:var(--workspace-gutter); }
+.reference-app .insight-brief { gap:12px; }
+.reference-app .insight-brief>section { display:block; margin:12px 0; }
+.reference-app .insight-brief>section>h3 { margin:0 0 12px; }
+.reference-app .insight-brief .feature-card h4 { margin:0 0 8px; }
+.reference-app .insight-brief .feature-card p { margin:0 0 12px; }
+.reference-app .publisher-panel :is(.delivery-health,.campaign-management) { padding:16px 0; border:0; border-bottom:1px solid var(--border); border-radius:0; }
+.reference-app .view-polls .page-tabs { padding:0; gap:0; }
+.reference-app .view-polls .page-tabs>button { flex:1; }
+.reference-app .view-polls .page-tabs>button.active:after { width:56px; left:50%; right:auto; transform:translateX(-50%); }
+/* Discover uses Bluesky's 45px brand row; other page headers remain 52px. */
+.reference-app .sky-feed-header { height:45px!important; min-height:45px!important; padding-block:0!important; }
+.reference-app .sky-feed-tabs { top:45px; }
+.reference-app .refined-poll-list .poll-list-row { border-bottom:1px solid var(--border); }
+.reference-app .refined-poll-list .poll-list-row>.poll-list-item { border-bottom:0; }
+.reference-app .main-scroll.view-discover>.sky-feed-header { border:0!important; }
+
+/* Counts are anchored to the 24px icon, never to a differently sized nav row. */
+.reference-app .navigation-icon { position:relative; display:inline-flex; align-items:center; justify-content:center; flex:0 0 24px; width:24px; height:24px; line-height:1; }
+.reference-app .navigation-icon>.nav-count {
+ position:absolute; inset:-6px -6px auto auto; display:grid; place-items:center;
+ box-sizing:border-box; min-width:18px; height:18px; margin:0; padding:0 3px;
+ border:2px solid var(--surface); border-radius:999px;
+ background:var(--accent); color:#fff; font-size:11px; line-height:14px;
+ font-weight:600; font-variant-numeric:tabular-nums; white-space:nowrap; pointer-events:none;
+}

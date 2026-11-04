@@ -1,0 +1,14 @@
+/* Behavioral feedback only. Layout remains in threads.css and forms.css. */
+.field-error{font-size:13px;line-height:19px;color:var(--danger-ink);margin-top:4px}
+.option-input:has(.field-error){flex-wrap:wrap}
+.option-input>.field-error{flex:1 0 100%}
+[aria-invalid=true]{border-color:var(--danger-ink)!important;outline-color:var(--danger-ink)!important}
+.page-heading h2{font-size:20px;font-weight:600}
+@media(max-width:700px){.page-heading h2{font-size:17px}}
+#toast{display:flex;align-items:center;gap:12px;pointer-events:none}
+#toast.visible{pointer-events:auto}
+.toast-message{min-width:0;overflow-wrap:anywhere}
+.toast-dismiss{display:grid;place-items:center;flex:0 0 36px;width:36px;height:36px;margin:-8px -8px -8px 0;padding:8px;border:0;border-radius:10px;background:transparent;color:inherit}
+.toast-dismiss:hover{background:#ffffff45}
+.toast-dismiss .icon{width:18px;height:18px}
+.page-heading h1:focus{outline:none}

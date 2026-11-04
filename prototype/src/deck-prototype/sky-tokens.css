@@ -1,0 +1,48 @@
+/* Brand source: qa/welcome-illustrations/artwork.json, sign-in hero palette. */
+:root {
+  --brand-sky: #8BCBFA;
+  --brand-ivory: #F8F6F0;
+  --brand-charcoal: #29333D;
+  --accent: var(--brand-sky);
+  --on-accent: #17374f;
+  --motion: 1;
+}
+:root, :root[data-theme=light] {
+  color-scheme: light;
+  --canvas: var(--brand-sky);
+  --surface: #ffffff;
+  --raised: #ffffff;
+  --soft: #ddf0fe;
+  --menu: #ffffff;
+  --text: #253441;
+  --muted: #374e61;
+  --faint: #3b5265;
+  --line: #dce8f0;
+  --line-strong: #aac1d3;
+  --accent-ink: #205e8a;
+  --accent-border: #4382b2;
+  --tint: #c9e8ff;
+  --focus: #2675ad;
+  --shadow: 0 8px 32px #17374f14;
+}
+:root[data-theme=dark] {
+  color-scheme: dark;
+  --canvas: #102b40;
+  --surface: #16354b;
+  --raised: #21435d;
+  --soft: #244a65;
+  --menu: #1c3e58;
+  --text: #eff7fd;
+  --muted: #abc0d1;
+  --faint: #93adbf;
+  --line: #345b76;
+  --line-strong: #7296b1;
+  --accent-ink: var(--brand-sky);
+  --accent-border: var(--brand-sky);
+  --tint: #2b5674;
+  --focus: var(--brand-sky);
+  --shadow: 0 8px 32px #0005;
+}
+::selection { background: var(--accent); color: var(--on-accent); }
+
+:root{--danger-ink:#b83240}:root[data-theme=dark]{--danger-ink:#ffabb2}

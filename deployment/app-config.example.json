@@ -1,0 +1,21 @@
+{
+  "build_path": "build",
+  "stack": "python_3_11",
+  "memory": 512,
+  "command": "python3 -m gunicorn --config gunicorn.conf.py app:app",
+  "catalyst_auth": false,
+  "login_redirect": "/",
+  "env_variables": {
+    "SECRET_KEY": "",
+    "AI_VAULT_KEY": "",
+    "ADMIN_EMAIL": "",
+    "PLATFORM_MODE": "true",
+    "PP_CATALYST_AUTH_ENABLED": "true",
+    "PP_CATALYST_STORAGE": "true",
+    "PP_CATALYST_BUCKET": "",
+    "PP_CATALYST_CACHE_SEGMENT": "",
+    "PUBLIC_APP_URL": "",
+    "PAYMENTS_MODE": "test",
+    "BUNDLED_FFMPEG": "true"
+  }
+}

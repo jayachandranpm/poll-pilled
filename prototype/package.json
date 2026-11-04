@@ -1,0 +1,24 @@
+{
+  "name": "prototype",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build && node scripts/prepare-sites-build.mjs",
+    "preview": "vite preview",
+    "test:sites": "node --test tests/sites-worker.test.mjs",
+    "test:demo": "node --test tests/demo.test.mjs",
+    "test:ui": "node --test tests/navigation.test.mjs tests/demo.test.mjs tests/ai-bridge.test.mjs tests/editor.test.mjs tests/poll-first.test.mjs tests/interaction-state.test.mjs tests/turnstile.test.mjs tests/security-diagnostic.test.mjs tests/creator-studio.test.mjs tests/creator-studio-dom.test.mjs tests/following.test.mjs tests/following-app.test.mjs tests/account-onboarding.test.mjs tests/loading.test.mjs"
+  },
+  "dependencies": {
+    "@vitejs/plugin-react": "5.0.4",
+    "chart.js": "^4.6.1",
+    "react": "19.2.0",
+    "react-dom": "19.2.0",
+    "vite": "6.4.2"
+  },
+  "devDependencies": {
+    "jsdom": "^30.1.3"
+  }
+}

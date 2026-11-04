@@ -1,0 +1,8 @@
+#!/bin/sh
+set -eu
+if ! command -v gitleaks >/dev/null 2>&1; then
+  echo 'Install gitleaks before committing. Secret scanning is required.' >&2
+  exit 1
+fi
+python3 scripts/check_tracked_files.py
+exec gitleaks git --pre-commit --staged --redact=100 --no-banner

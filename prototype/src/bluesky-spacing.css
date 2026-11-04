@@ -1,0 +1,187 @@
+/* Spacing only. Measured against bsky.app on 2026-10-31.
+   Existing layouts, typography, controls, colors, media and behavior stay owned
+   by their current styles. Product-only components use the same ALF intervals. */
+.reference-app { --workspace-gutter: var(--bsky-space-xl); }
+
+/* Shared page chrome: Bluesky's 52px header, 8px gap, 20px inset. */
+.reference-app .page-header,
+.reference-app .main-scroll:not(.view-discover) .page-header,
+.reference-app .view-discover .page-header,
+.reference-app .studio-header {
+ height: var(--bsky-header-height);
+ min-height: var(--bsky-header-height);
+ padding: var(--bsky-space-xs) var(--workspace-gutter);
+ gap: var(--bsky-space-sm);
+}
+.reference-app .sky-feed-tabs { top: var(--bsky-header-height); height: 47px; gap: var(--bsky-space-xl); padding-inline: var(--workspace-gutter); }
+.reference-app .page-header .sky-back { margin-inline: -9px -2px; }
+.reference-app .sky-feed-header { height: var(--bsky-header-height) !important; min-height: var(--bsky-header-height) !important; padding: var(--bsky-space-xs) var(--workspace-gutter) !important; }
+.reference-app .sky-feed-tabs button { padding: var(--bsky-space-md) 0; }
+.reference-app .page-tabs { padding-inline: var(--workspace-gutter); gap: var(--bsky-space-2xl); }
+.reference-app .page-tabs > button { gap: var(--bsky-space-sm); padding: var(--bsky-space-md) 0; }
+.reference-app .column-footer { gap: var(--bsky-space-md); padding: var(--bsky-space-lg) var(--workspace-gutter); }
+.reference-app [id^=editor-] { scroll-margin-top: calc(var(--bsky-header-height) + var(--bsky-space-lg)); }
+
+/* Navigation: continuous 48px rows, 12px inset and 8px icon-label gap. */
+.reference-app .workspace-pill { gap: 0; }
+.reference-app .workspace-link { gap: var(--bsky-space-sm); padding: 10px var(--bsky-space-md); }
+.reference-app .wordmark { margin-block: var(--bsky-space-lg) var(--bsky-space-md); gap: var(--bsky-space-sm); }
+.reference-app .sky-create { margin-block: var(--bsky-space-lg) 0; gap: var(--bsky-space-sm); }
+.reference-app .sky-drawer .workspace-link { margin: 0; padding: var(--bsky-space-md); }
+
+/* Continuous feed rows and ALF control spacing. */
+.reference-app .discover-toolbar,
+.reference-app .view-discover .discover-toolbar { padding: var(--bsky-space-md) var(--workspace-gutter) var(--bsky-space-sm) !important; }
+.reference-app .discovery-control-row,
+.reference-app .discover-context { gap: var(--bsky-space-sm); }
+.reference-app .poll-search { gap: var(--bsky-space-sm); }
+.reference-app .discover-context { margin-top: var(--bsky-space-xs); }
+.reference-app .active-filters { gap: var(--bsky-space-sm); margin-block: var(--bsky-space-sm) 0; }
+.reference-app .poll-grid { padding: 0; }
+.reference-app .poll-grid .taking-card,
+.reference-app .taking-card { padding: var(--bsky-space-md) var(--workspace-gutter); }
+.reference-app .focused-poll .column-surface { padding-inline: 0; }
+.reference-app .focused-poll .taking-card { margin: 0; }
+.reference-app .taking-meta,
+.reference-app .taking-card.compact .taking-meta { margin-bottom: var(--bsky-space-sm); gap: var(--bsky-space-sm); }
+.reference-app .taking-title h2 { margin: 0 0 var(--bsky-space-sm); }
+.reference-app .taking-card .poll-effort { margin-block: var(--bsky-space-md); gap: var(--bsky-space-md); }
+.reference-app .taking-card .classic-options,
+.reference-app .taking-card .visual-options,
+.reference-app .taking-card .video-options { gap: var(--bsky-space-sm); }
+.reference-app .taking-card .classic-option { padding: var(--bsky-space-md); gap: var(--bsky-space-sm); }
+.reference-app .taking-card .visual-option > span { padding: var(--bsky-space-sm) var(--bsky-space-md); gap: var(--bsky-space-sm); }
+.reference-app .answer-explanation { margin-top: var(--bsky-space-md); padding-top: var(--bsky-space-xs); }
+.reference-app .answer-explanation[open] > summary { margin-bottom: var(--bsky-space-sm); }
+.reference-app .taking-card label { margin-block: var(--bsky-space-md); }
+.reference-app .take-submit { margin-top: var(--bsky-space-md); }
+.reference-app .take-submit > small { margin-top: var(--bsky-space-sm); gap: var(--bsky-space-xs); }
+.reference-app .poll-secondary-actions { gap: var(--bsky-space-sm); margin-top: var(--bsky-space-xs); }
+.reference-app .feed-end { padding: var(--bsky-space-sm) var(--workspace-gutter) var(--bsky-space-lg); }
+
+/* Lists: one 20px page inset, 12px row padding, 12px between row contents. */
+.reference-app .polls-page .refined-poll-list,
+.reference-app .view-saved .refined-poll-list { padding: var(--bsky-space-md) var(--workspace-gutter); }
+.reference-app .refined-poll-list .poll-list-item,
+.reference-app .polls-page .refined-poll-list .poll-list-item { padding: var(--bsky-space-md); gap: var(--bsky-space-md); margin-bottom: var(--bsky-space-sm); }
+.reference-app .polls-page .draft-card { margin: var(--bsky-space-md) var(--workspace-gutter); width: calc(100% - 2 * var(--workspace-gutter)); padding: var(--bsky-space-md); gap: var(--bsky-space-md); }
+.reference-app .draft-card h3 { margin-block: var(--bsky-space-xs); }
+.reference-app .draft-card p { margin-top: var(--bsky-space-xs); }
+.reference-app .poll-list-copy progress { margin-top: var(--bsky-space-sm); }
+
+/* Settings rows and form sections use the source's 8 / 12 / 20px rhythm. */
+.reference-app .settings-section-nav { padding: var(--bsky-space-lg) var(--bsky-space-sm); gap: 0; }
+.reference-app .settings-section-nav button,
+.reference-app .settings-section-nav summary { padding: var(--bsky-space-sm) var(--bsky-space-md); gap: var(--bsky-space-sm); min-height: 48px; }
+.reference-app .settings-section-nav details { margin-top: var(--bsky-space-lg); }
+.reference-app .settings-section-nav > .field-label { padding-inline: var(--bsky-space-md); margin: 0 0 var(--bsky-space-sm); }
+.reference-app .settings-home { padding: 0; }
+.reference-app .settings-home > header { padding: 24px 20px; gap: var(--bsky-space-md); }
+.reference-app .settings-home nav { gap: var(--bsky-space-sm); }
+.reference-app .settings-home nav button { padding: var(--bsky-space-sm) var(--bsky-space-xl); gap: var(--bsky-space-sm); min-height: 48px; }
+.reference-app .settings .settings-section { padding: var(--bsky-space-lg) var(--workspace-gutter); }
+.reference-app .theme-section { padding: var(--bsky-space-lg) var(--workspace-gutter); }
+.reference-app .appearance-row,
+.reference-app .appearance-row:nth-child(n+2),
+.reference-app .appearance-row:nth-child(2),
+.reference-app .appearance-row:last-child { padding: var(--bsky-space-md) var(--workspace-gutter); gap: var(--bsky-space-sm); }
+.reference-app .theme-previews { margin-top: var(--bsky-space-md); gap: var(--bsky-space-sm); }
+.reference-app .appearance-sample { margin: var(--bsky-space-md) var(--workspace-gutter) 0; padding: var(--bsky-space-lg); }
+.reference-app .selected-topics { margin-top: var(--bsky-space-md); gap: var(--bsky-space-sm); }
+.reference-app .topic-grid,
+.reference-app .format-preferences { gap: var(--bsky-space-sm); }
+.reference-app .topic-grid > button,
+.reference-app .format-preferences > button { padding: var(--bsky-space-md); gap: var(--bsky-space-sm); }
+.reference-app .preference-preview { padding: var(--bsky-space-md) var(--bsky-space-lg); }
+.reference-app .settings details { margin-top: var(--bsky-space-md); }
+.reference-app .settings details > summary { padding-block: var(--bsky-space-sm); gap: var(--bsky-space-sm); }
+.reference-app .settings details > p { margin: var(--bsky-space-sm) 0 var(--bsky-space-md); }
+.reference-app .setting-row { padding-block: var(--bsky-space-md); gap: var(--bsky-space-md); }
+.reference-app .ai-connections { gap: var(--bsky-space-lg); }
+.reference-app .ai-connections .feature-card { padding: var(--bsky-space-lg); }
+.reference-app .ai-key-card form { margin-top: var(--bsky-space-lg); }
+.reference-app .ai-usage-metrics { margin-block: var(--bsky-space-lg); }
+.reference-app .cloudflare-settings { padding: var(--bsky-space-lg) var(--workspace-gutter); gap: var(--bsky-space-lg); }
+.reference-app .cloudflare-settings > .settings-section { padding: var(--bsky-space-lg); }
+
+/* Wallet and publisher sections reuse the same page and nested-card insets. */
+.reference-app .wallet-overview { padding: 0 !important; }
+.reference-app .wallet-balances { gap: 0; margin-bottom: 0; }
+.reference-app .earnings-card,
+.reference-app .publishing-balance { padding: 20px var(--workspace-gutter); }
+.reference-app .earnings-main { padding-block: var(--bsky-space-md); }
+.reference-app .wallet-columns,
+.reference-app .wallet-primary,
+.reference-app .wallet-secondary { gap: 0; }
+.reference-app .section-heading,
+.reference-app .wallet-ledger .section-heading { padding: var(--bsky-space-md) var(--bsky-space-lg); gap: var(--bsky-space-sm); }
+.reference-app .wallet-inbox.is-clear { padding: var(--bsky-space-md) var(--bsky-space-lg); }
+.reference-app .wallet-inbox.is-clear .section-heading { padding: 0; }
+.reference-app .inbox-row,
+.reference-app .ledger-row,
+.reference-app .ledger-caption { padding: var(--bsky-space-md) var(--bsky-space-lg); gap: var(--bsky-space-md); }
+.reference-app .impact-card { padding: var(--bsky-space-lg); }
+.reference-app .publisher-page { padding: var(--bsky-space-lg) var(--workspace-gutter); }
+.reference-app .publisher-page .metric-strip { padding: var(--bsky-space-lg); margin-block: var(--bsky-space-lg); gap: var(--bsky-space-lg); }
+.reference-app .publisher-panel .feature-card { padding: var(--bsky-space-lg); margin-block: var(--bsky-space-md); }
+.reference-app .publisher-panel .feature-heading { gap: var(--bsky-space-md); margin-bottom: var(--bsky-space-md); }
+.reference-app .review-actions { gap: var(--bsky-space-sm); }
+.reference-app .review-toolbar { margin: var(--bsky-space-lg) 0 var(--bsky-space-md); }
+.reference-app .delivery-health,
+.reference-app .campaign-management,
+.reference-app .decision-preview { padding: var(--bsky-space-lg); }
+.reference-app .recipient-row { padding: var(--bsky-space-md); gap: var(--bsky-space-md); }
+.reference-app .published-preview { margin-top: var(--bsky-space-lg); }
+
+/* Creation uses the same insets without changing its canvas or controls. */
+.reference-app .studio-topline { padding: var(--bsky-space-md) var(--workspace-gutter) 0; }
+.reference-app .studio-author { padding: var(--bsky-space-lg) var(--workspace-gutter) 0; gap: var(--bsky-space-sm); }
+.reference-app .editor-section-links { padding-inline: var(--workspace-gutter); gap: var(--bsky-space-xs); }
+.reference-app .studio-compose { padding: var(--bsky-space-lg) var(--workspace-gutter); gap: var(--bsky-space-lg); }
+.reference-app .studio-name { gap: var(--bsky-space-sm); }
+.reference-app .studio-compose .question-input { padding: var(--bsky-space-md); }
+.reference-app .studio-draft-tools { padding-bottom: var(--bsky-space-md); margin-top: calc(-1 * var(--bsky-space-sm)); gap: var(--bsky-space-sm); }
+.reference-app .studio-formats,
+.reference-app .interaction-modes,
+.reference-app .studio-options { gap: var(--bsky-space-sm); }
+.reference-app .studio-formats > button,
+.reference-app .interaction-modes > button { padding: var(--bsky-space-md); gap: var(--bsky-space-xs); }
+.reference-app .studio-topics { padding: var(--bsky-space-lg) var(--workspace-gutter); }
+.reference-app .studio-topics > p { margin: var(--bsky-space-sm) 0 var(--bsky-space-md); }
+.reference-app .studio-disclosure > summary { padding: var(--bsky-space-md) var(--workspace-gutter); gap: var(--bsky-space-sm); }
+.reference-app .studio-settings { padding: 0 var(--workspace-gutter) var(--bsky-space-lg); }
+.reference-app .studio-action-dock { margin-top: var(--bsky-space-lg); padding: var(--bsky-space-md) var(--workspace-gutter); gap: var(--bsky-space-sm) var(--bsky-space-lg); }
+.reference-app .editor-preview-rail .studio-preview-body { padding: var(--bsky-space-lg); }
+
+/* Dialog and menu insets follow the existing Bluesky primitive sizes. */
+.reference-app .modal { --dialog-gutter: var(--bsky-space-2xl); }
+.reference-app .modal > header { padding: var(--bsky-space-lg) var(--dialog-gutter); gap: var(--bsky-space-lg); }
+.reference-app .modal-body { padding: 0 var(--dialog-gutter) var(--bsky-space-2xl); }
+.reference-app .modal-footer { padding: var(--bsky-space-lg) var(--dialog-gutter); gap: var(--bsky-space-sm); }
+.reference-app .modal-body > h3 { margin: var(--bsky-space-md) 0; }
+.reference-app .modal-body > p,
+.reference-app .modal-body > label,
+.reference-app .modal-body > .custom-select { margin-block: var(--bsky-space-md); }
+.reference-app .modal-body > :first-child { margin-top: 0; }
+.reference-app .modal-body > :last-child { margin-bottom: 0; }
+.reference-app .select-menu { padding: var(--bsky-space-xs); }
+.reference-app .select-menu > button { padding: var(--bsky-space-sm) var(--bsky-space-md); gap: var(--bsky-space-lg); }
+.reference-app .segmented { padding: var(--bsky-space-xs); gap: 0; }
+
+@media (max-width:700px) {
+ .reference-app { --workspace-gutter: var(--bsky-space-lg); }
+ .reference-app .page-header,
+ .reference-app .main-scroll:not(.view-discover) .page-header,
+ .reference-app .view-discover .page-header,
+ .reference-app .studio-header { padding-inline: var(--bsky-space-md); }
+ .reference-app .sky-feed-header { padding-inline: var(--bsky-space-md) !important; }
+ .reference-app .sky-feed-tabs { gap: var(--bsky-space-md); padding-inline: var(--bsky-space-md); }
+ .reference-app .poll-grid { row-gap: var(--bsky-space-lg); }
+ .reference-app .focused-poll .taking-card { margin-inline: 0; }
+ .reference-app .focused-poll .taking-card .take-submit { margin: var(--bsky-space-md) -16px -16px; padding: var(--bsky-space-md) var(--bsky-space-lg) calc(12px + env(safe-area-inset-bottom)); }
+ .reference-app .studio-action-dock { padding-bottom: calc(12px + env(safe-area-inset-bottom)); }
+ .reference-app .modal { --dialog-gutter: var(--bsky-space-xl); }
+ .reference-app .modal:has(.answer-preview) { width: 100%; margin-inline: 0; }
+ .reference-app .settings-home nav button { padding-inline: var(--bsky-space-lg); }
+ .reference-app .studio-draft-tools { gap: var(--bsky-space-xs); }
+}

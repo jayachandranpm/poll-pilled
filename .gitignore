@@ -1,0 +1,68 @@
+# Credentials, private configuration and local identity
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+*.keystore
+*.enc
+.secret
+.ai-vault-key
+credentials.json
+service-account*.json
+.npmrc
+.catalystrc
+.openai/
+.codex/
+
+# Live account state, uploaded/generated private media and local databases
+instance/
+uploads/
+*.db
+*.db-*
+*.sqlite
+*.sqlite3
+*.sqlite3-*
+
+# Deployment settings contain real credentials. Commit only templates.
+deployment/*
+!deployment/app-config.example.json
+catalyst-debug.log
+
+# Dependencies, caches and generated build outputs
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+node_modules/
+dist/
+build/
+coverage/
+.coverage
+htmlcov/
+*.egg-info/
+
+# Private audit records, screenshots, logs and local backups
+qa/
+artifacts/
+implementation-backup/
+*-qa.html
+*qa.md
+navigation-audit.md
+*.log
+*.har
+*.zip
+*.tar
+*.tar.gz
+*.bak
+.DS_Store
+Thumbs.db
+
+# This build manifest contains only null service bindings and is required by Vite.
+!prototype/.openai/
+prototype/.openai/*
+!prototype/.openai/hosting.json

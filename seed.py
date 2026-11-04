@@ -1,0 +1,16 @@
+"""A small, clearly labeled example community to explore on first launch."""
+POLLS = [
+    dict(id='four-day-week', title='A 4-day workweek. Same pay.\nWhat’s the catch?', description='The five-day week had a good run. Is it time to give Friday back?', category='Work & life', mode='text', author='Nina Park', initials='NP', color='lavender', age=42, hours=26, featured=True, options=[('Sign me up', 'sun-2', 842), ('There’s always a catch', 'magnifer', 316)], tags=['Work & life', 'The big questions']),
+    dict(id='ai-best-friend', title='Could you be best friends\nwith an AI?', description='It remembers your birthday. It never steals your fries. But does that count?', category='Tech & AI', mode='voice', author='Leo Chen', initials='LC', color='sage', age=105, hours=18, options=[('Honestly, yes', 'heart', 294), ('I need a human', 'users-group-rounded', 521)], tags=['Tech & AI']),
+    dict(id='dream-desk', title='Pick your Monday morning.\nNo wrong answers. Probably.', description='A little visual manifestation for your next workday.', category='Design', mode='image', author='Amara Okafor', initials='AO', color='peach', age=150, hours=36, options=[('City energy', 'gallery', 438), ('Cabin calm', 'gallery', 683)], tags=['Design', 'Work & life']),
+    dict(id='skip-small-talk', title='Can we skip the small talk\nand get to the weird stuff?', description='First meeting. First question. How deep are we going?', category='Culture', mode='text', author='Sam Rivera', initials='SR', color='yellow', age=210, hours=48, options=[('Tell me your conspiracy', 'stars', 612), ('Let me warm up first', 'sun-2', 407)], tags=['Culture']),
+    dict(id='pineapple-court', title='Pineapple on pizza.\nMake your case.', description='The internet’s longest-running courtroom is now in session. You have the mic.', category='Food & drink', mode='voice', author='Zoe Miller', initials='ZM', color='rose', age=270, hours=22, options=[('Sweet + salty supremacy', 'heart', 297), ('Absolutely criminal', 'fire', 362)], tags=['Food & drink', 'Culture']),
+    dict(id='offline-weekend', title='A whole weekend offline.\nCould you actually do it?', description='No scrolling. No notifications. Just you and the terrifying prospect of a hobby.', category='Work & life', mode='text', author='Ollie James', initials='OJ', color='blue', age=330, hours=64, options=[('Sounds like heaven', 'sun-2', 391), ('I lasted 4 minutes', 'bolt', 223)], tags=['Work & life', 'Culture']),
+]
+TAKES = [
+    ('four-day-week', 0, 'Maya', 'MP', 'lavender', 'We got faster Wi-Fi, smarter tools, and somehow more meetings. I think we have earned our Fridays back.', 17, 38),
+    ('four-day-week', 1, 'Theo', 'TW', 'sage', 'I love the idea, but squeezing five days of deadlines into four is not a shorter week. It is a longer Thursday.', 15, 24),
+    ('ai-best-friend', 0, 'Jamie', 'JK', 'peach', 'If a conversation makes you feel understood, that connection means something. I would not dismiss it just because it is different.', 16, 31),
+    ('ai-best-friend', 1, 'Riley', 'RD', 'blue', 'My best friends challenge me because they have lives and opinions of their own. That is the part I would miss.', 14, 47),
+    ('pineapple-court', 0, 'Casey', 'CL', 'yellow', 'Sweet and salty has always been a winning combination. Nobody puts a salted caramel on trial. Let pineapple live.', 12, 22),
+]

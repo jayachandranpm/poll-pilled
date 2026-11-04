@@ -1,0 +1,231 @@
+/* Source of truth: Ant Trial/pollpool app.css + theme.css + studio.css.
+ * Selectors are mapped to Poll Pilled component names; feature-only adapters are at the end. */
+/* Poll Pool control contracts. These apply to every route and dialog. */
+.reference-app{--control-height:36px;--radius-control:10px}
+.reference-app .button,.reference-app .settings .button,.reference-app .modal .button,.reference-app .poll-action-row .button,.reference-app .content-settings .button{min-height:36px;padding:7px 16px;border:1px solid transparent;border-radius:10px;font-size:14px;line-height:20px;font-weight:600;gap:7px;box-shadow:0 2px 4px #0a66c214}
+.reference-app .button.primary{background:#0a66c2;border-color:#0a66c2;color:white}
+.reference-app .button.primary:hover:not(:disabled){background:#004182;border-color:#004182}
+.reference-app .button.secondary,.reference-app .button.soft{color:#3b5b73;background:white;border-color:#d9e8f3;box-shadow:none}
+.reference-app .button.secondary:hover:not(:disabled),.reference-app .button.soft:hover:not(:disabled){background:#eef8ff;border-color:#acd4ec;color:#0a66c2}
+.reference-app .button.ghost,.reference-app .button.text{background:none;border-color:transparent;box-shadow:none;color:#0a66c2;padding:4px 0;font-size:13px;min-height:28px}
+.reference-app .button.text:hover,.reference-app .button.ghost:hover{text-decoration:underline;box-shadow:none}
+.reference-app .button:disabled{box-shadow:none;cursor:not-allowed;opacity:1;color:#81909b;background:#f8fafc;border-color:#e1e8ed}
+.reference-app .button>.icon{width:18px!important;height:18px!important}
+.reference-app .icon-button{min-width:32px;width:32px;height:32px;min-height:32px;padding:7px;border-radius:50%;color:#71899c}
+.reference-app .icon-button>.icon{width:18px!important;height:18px!important}
+.reference-app .page-header-actions>.icon-button{height:44px;width:44px;padding:10px}.reference-app .page-header-actions>.icon-button>.icon{width:24px!important;height:24px!important}
+.reference-app .select-trigger{min-height:44px;padding:10px 12px;gap:12px;border:1px solid #d9e8f3;border-radius:12px;font-size:14px;line-height:20px;font-weight:400;color:#3e5e77}
+.reference-app .select-trigger:hover{background:#f7fbfe;border-color:#afd4eb}.reference-app .select-trigger[aria-expanded=true]{background:#edf5fd;border-color:#b5ddf4;color:#0a66c2}
+.reference-app .select-trigger>.icon:last-child{width:14px!important;height:14px!important}
+.reference-app .select-menu{border:1px solid #e0edf6;border-radius:16px;padding:7px;background:white;box-shadow:0 14px 44px #1c669818,0 3px 9px #1c669808;max-height:320px;overflow:auto}
+.reference-app .select-menu>button{padding:12px;min-height:44px;border-radius:9px;font-size:15px;font-weight:600;line-height:21px;gap:12px}
+.reference-app .select-menu>button:hover,.reference-app .select-menu>button:focus{background:#eff8fe;outline:none}.reference-app .select-menu>button:focus-visible{box-shadow:inset 0 0 0 2px #8cb8e5}
+.reference-app .select-menu>button[aria-selected=true]{background:#edf5fd;color:#0a66c2}
+.reference-app .select-menu>button>.icon{width:18px!important;height:18px!important;color:#0a66c2}
+.reference-app label{font-size:13px;font-weight:500;color:#526879}
+.reference-app input:not([type=range]):not([type=checkbox]),.reference-app textarea{min-height:46px;border:1px solid #d9e7f0;border-radius:12px;padding:12px;color:#213444;background:white;font-size:15px;font-weight:400;line-height:21px;transition:border-color .15s;outline:none}
+.reference-app textarea{min-height:100px;resize:none}
+.reference-app input:not([type=range]):focus-visible,.reference-app textarea:focus-visible{border-color:#5e9ddc;box-shadow:0 0 0 3px #0a66c210;outline:none}
+.reference-app .interest-grid button{font-size:13px;font-weight:600;line-height:20px;border-radius:20px;padding:6px 13px;min-height:34px}
+.reference-app .segmented{border:0;border-bottom:1px solid var(--border);border-radius:0;background:white;padding:0;gap:0}
+.reference-app .segmented>button{border:0;border-bottom:2px solid transparent;flex:1;border-radius:0;background:none;padding:16px 8px;font-size:14px;line-height:20px;font-weight:500;min-height:54px;color:#526879;box-shadow:none}
+.reference-app .segmented>button.selected{color:#0a66c2;border-bottom-color:#0a66c2;font-weight:600;background:white;box-shadow:none}
+.reference-app .segmented>button:hover{background:#f2faff}
+.reference-app .page-tabs{gap:0;border-bottom:1px solid var(--border)}.reference-app .page-tabs button{flex:1;text-align:center;padding:16px 8px;font-size:14px;line-height:20px;border-bottom:2px solid transparent;border-radius:0;min-height:54px}.reference-app .page-tabs button.active{border-color:#0a66c2;font-weight:600}
+.reference-app .pool-choice-mark{display:inline-grid;place-items:center;flex:none;width:22px;height:22px;border:1px solid #a8bdce;border-radius:50%;color:transparent;background:white}
+.reference-app .pool-choice-mark.checked{border-color:#0a66c2;background:#0a66c2;color:white}
+.reference-app .switch{display:grid;place-items:center;min-width:44px;width:44px;height:44px;background:none;padding:0;border:0}
+.reference-app .switch:disabled{background:none;opacity:.65}
+.reference-app .format-check{width:22px;height:22px}.reference-app .format-check>.icon{width:15px!important;height:15px!important}
+.reference-app .classic-option{border:1px solid #d6e9f5;border-radius:12px;padding:14px;min-height:52px;gap:10px;background:white;font-size:14px;line-height:21px;font-weight:500}
+.reference-app .classic-option.selected{background:#edf5fd;border-color:#0a66c2;color:#004182;box-shadow:inset 0 0 0 1px #0a66c2}
+.reference-app .ranking-option{gap:12px;padding:10px 12px;border-radius:12px;border:1px solid #d4e2ee;min-height:54px}.reference-app .ranking-option>b{font-size:13px;line-height:20px;font-weight:600}.reference-app .ranking-option>.icon-button{border-radius:7px}
+.reference-app .poll-surface .visual-option>span{font-size:14px;line-height:21px;font-weight:500;gap:10px}
+.reference-app .format-preferences>button{border:1px solid #dcebf3;border-radius:12px;padding:15px;font-size:14px;line-height:21px;font-weight:600}
+.reference-app .format-preferences>button[aria-pressed=true]{background:#edf5fd;border-color:#a9d7ee}
+.reference-app .discover-toolbar .select-trigger{min-height:32px;height:32px;border:0;background:none;padding:5px 8px;font-size:13px;gap:5px;color:#526879}
+.reference-app .discover-toolbar .discover-view-switch{height:38px;border:0;background:none;padding:0}.reference-app .discover-view-switch>button{flex:none;min-height:38px;padding:6px 10px;font-size:12px;border:0;border-radius:8px}.reference-app .discover-view-switch>button.selected{background:#edf5fd;border:0}
+.reference-app .page-title-row .select-trigger{min-height:40px;border:0;background:none;padding:5px 2px;font-size:16px;gap:3px}
+.reference-app .feed-composer>.button{min-height:34px;padding:6px 14px}.reference-app .feed-actions>.button{min-height:32px;font-size:13px;padding:4px 0}
+.reference-app .discover-search input{min-height:36px;padding:0;border:0;background:none;box-shadow:none}
+.reference-app .publisher-panel>.segmented{display:flex;flex-wrap:wrap;gap:0}.reference-app .publisher-panel>.segmented>button{padding:12px 8px;min-height:44px;font-size:12px}
+.reference-app .expression-toolbar .segmented>button{min-height:40px;padding:8px 10px;font-size:13px}
+
+/* Poll Pool studio, including its exact format tiles and option input family. */
+.reference-app .pool-studio{display:block;height:100dvh;overflow:hidden;background:var(--canvas)}
+.reference-app .studio-column{width:640px;max-width:calc(100vw - 136px);height:100dvh;margin-left:max(112px,calc((100vw - 640px)/2));padding:0 0 24px;overflow:auto;scrollbar-width:none;outline:none}
+.reference-app .studio-header{height:72px;padding:0 24px;position:sticky;top:0;z-index:25;background:var(--canvas);display:flex;align-items:center;justify-content:space-between;gap:12px}
+.reference-app .studio-header h1{font-size:20px;line-height:25px;font-weight:600;letter-spacing:-.35px}
+.reference-app .studio-surface{background:white;border:1px solid var(--border);border-radius:24px;box-shadow:0 8px 32px #1e6c9a07}
+.reference-app .studio-topline{display:flex;justify-content:space-between;padding:22px 24px 0;gap:12px;font-size:11px;font-weight:600;letter-spacing:1.1px;color:var(--accent)}
+.reference-app .studio-topline>span:last-child{font-weight:400;letter-spacing:0;color:var(--muted)}
+.reference-app .studio-author{display:flex;align-items:center;gap:12px;padding:24px 24px 0}.reference-app .studio-author>div{flex:1}.reference-app .studio-author b{font-size:14px}.reference-app .studio-author small{display:block;font-size:12px;margin-top:2px;color:var(--muted)}.reference-app .studio-author>.button{font-size:12px}
+.reference-app .studio-compose{display:flex;flex-direction:column;gap:20px;padding:22px 24px 24px}
+.reference-app .studio-name{display:flex;align-items:center;gap:12px}.reference-app .studio-name>input{border:0!important;background:none!important;min-height:28px!important;padding:0!important;font-size:13px!important;flex:1;min-width:0}
+.reference-app .studio-compose .canvas-overline{margin:0;font-size:11px;min-height:0}.reference-app .studio-compose .canvas-overline>.eyebrow{display:none}
+.reference-app .studio-compose .canvas-overline:has(>.eyebrow:only-child){display:none}
+.reference-app .studio-compose .question-input{font-size:24px;line-height:32px;font-weight:600;letter-spacing:-.5px;min-height:64px;border:0;background:none;padding:0;border-radius:0;resize:none;box-shadow:none;margin:0}
+.reference-app .studio-compose .question-input:focus-visible{outline:0!important;box-shadow:none;border-left:2px solid var(--accent);padding-left:12px;margin-left:-14px}
+.reference-app .studio-compose .canvas-meta{margin:-8px 0 0;font-size:12px;color:var(--muted)}
+.reference-app .studio-draft-tools{display:flex;align-items:center;gap:16px;margin-top:-6px;padding-bottom:20px;border-bottom:1px solid var(--border)}
+.reference-app .studio-draft-tools>.button{font-size:12px;min-height:24px}.reference-app .studio-draft-tools>span{margin-left:auto;font-size:12px;color:var(--muted)}.reference-app .studio-draft-tools>.icon-button{width:24px;height:24px;min-width:24px;min-height:24px;padding:4px;margin-left:-12px}
+.reference-app .format-heading h2,.reference-app .editor-heading h2{font-size:15px;line-height:22px;font-weight:600}.reference-app .format-heading p,.reference-app .editor-heading p{font-size:13px;line-height:20px;color:var(--muted);margin-top:4px}
+.reference-app .studio-formats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;margin-top:-8px}
+.reference-app .studio-formats>button{min-width:0;min-height:110px;display:flex;align-items:flex-start;flex-direction:column;gap:4px;padding:13px 11px;border:1px solid #dbe5ed;border-radius:13px;background:white;position:relative;color:var(--text);text-align:left}
+.reference-app .studio-formats>button:hover{border-color:#9bbfe4;background:#f7faff}.reference-app .studio-formats>button[aria-pressed=true]{border-color:#0a66c2;background:#edf5fd;box-shadow:0 0 0 1px #0a66c2;color:#0a66c2}
+.reference-app .studio-formats>button>.icon{margin-bottom:7px;color:#526879}.reference-app .studio-formats>button[aria-pressed=true]>.icon{color:#0a66c2}.reference-app .studio-formats b{font-size:13px;line-height:18px}.reference-app .studio-formats small{font-size:10px;line-height:15px;color:#526879}
+.reference-app .pool-selection{position:absolute;right:9px;top:10px;width:18px;height:18px;border-radius:50%;background:#0a66c2;color:white;display:grid;place-items:center}
+.reference-app .interaction-modes{display:grid;grid-template-columns:1fr 1fr;gap:10px}.reference-app .interaction-modes>button{padding:14px;text-align:left;border:1px solid #d6e3ee;border-radius:12px;background:white;display:flex;flex-direction:column;gap:4px}.reference-app .interaction-modes>button[aria-pressed=true]{background:#edf5fd;border-color:#0a66c2;color:#0a66c2}.reference-app .interaction-modes b{font-size:13px}.reference-app .interaction-modes small{font-size:12px;color:#526879}
+.reference-app .studio-options{display:grid;gap:12px}.reference-app .editor-text-options{gap:12px}
+.reference-app .studio-options .editable-option{display:flex;gap:10px;align-items:center;border:0;background:none;padding:0;box-shadow:none;border-radius:0;min-height:46px}
+.reference-app .option-letter{display:grid;place-items:center;width:28px;height:28px;flex-shrink:0;border-radius:8px;background:#edf3fa;color:#375c7c;font-size:12px;font-weight:600}
+.reference-app .studio-options .editable-option textarea{font-size:14px;font-weight:400;min-height:46px;border:1px solid #d5e1eb;border-radius:10px;padding:12px;flex:1;min-width:0}
+.reference-app .studio-options>.button{margin-left:38px;width:calc(100% - 38px);min-height:42px;background:#f9fbfd;border:1px solid #dbe5ed;color:#3b617f;font-size:13px}
+.reference-app .studio-options .editor-image-grid{gap:12px}.reference-app .studio-options .editor-option{padding:0;border:1px solid #d3e2ef;border-radius:14px;overflow:hidden;background:white}.reference-app .studio-options .editor-image>img{height:190px;border-radius:0;object-fit:cover}.reference-app .studio-options .option-input-row{padding:12px;margin:0}.reference-app .studio-options .option-input-row textarea{font-size:14px;line-height:21px;min-height:44px;margin:0;padding:10px}
+.reference-app .studio-options .editor-option>.media-input{right:8px;top:8px}.reference-app .studio-options .editor-option>.media-input .button{font-size:12px;min-height:32px;padding:6px 10px;background:white;border-color:#d9e8f3}
+.reference-app .studio-preview{border:1px solid #cddff1;border-radius:16px;background:#f8fbff;overflow:hidden;margin-top:4px}
+.reference-app .studio-preview>header{padding:14px 18px;border-bottom:1px solid #dce8f5;display:flex;align-items:center;justify-content:space-between;gap:12px;background:#edf5fd;font-size:12px;color:#0a66c2}.reference-app .studio-preview>header small{font-size:11px;color:#456887}
+.reference-app .studio-preview-body{padding:22px 18px 16px}.reference-app .studio-preview-body h3{font-size:16px;line-height:24px;font-weight:600;overflow-wrap:anywhere}.reference-app .studio-preview-body>p,.reference-app .studio-preview-body>small{display:block;font-size:12px;line-height:19px;color:#526879;margin:10px 0}.reference-app .studio-preview-body .classic-options,.reference-app .studio-preview-body .visual-options{margin-top:18px}.reference-app .studio-preview-body .visual-option>img{height:160px}.reference-app .studio-preview-body .visual-option>span{font-size:12px;padding:10px}.reference-app .preview-footnote{padding:0 18px 16px;text-align:center;font-size:11px;line-height:17px;color:#526879}
+.reference-app .studio-disclosure{border-top:1px solid var(--border)}.reference-app .studio-disclosure>summary{padding:22px 24px;display:flex;align-items:center;gap:12px;cursor:pointer;font-size:14px;list-style:none}.reference-app .studio-disclosure>summary::-webkit-details-marker{display:none}.reference-app .studio-disclosure>summary>span{flex:1}.reference-app .studio-disclosure>summary>small{font-size:12px;color:#526879}.reference-app .studio-disclosure[open]>summary>.icon{transform:rotate(180deg)}
+.reference-app .studio-settings{padding:0 24px 24px}.reference-app .studio-settings .content-settings{padding:0 0 20px;margin-bottom:20px}.reference-app .studio-settings .content-settings h3{font-size:15px}.reference-app .studio-settings .content-settings .button{margin-top:12px}.reference-app .studio-settings .content-settings>.eyebrow{font-size:11px}.reference-app .studio-settings .content-settings>small{display:block;font-size:12px;margin-top:12px}
+.reference-app .studio-settings .field-label{font-size:13px;margin-top:16px;margin-bottom:8px}.reference-app .studio-settings .select-trigger{width:100%}.reference-app .studio-settings .response-heading{font-size:13px;font-weight:500;margin-top:20px}.reference-app .studio-settings .cost-estimate{padding:20px;border:1px solid var(--border);border-radius:12px;margin-top:20px;background:var(--soft)}.reference-app .studio-settings .cost-estimate>strong{font-size:28px;line-height:34px;font-weight:600}.reference-app .studio-settings .fine-print{font-size:12px;line-height:19px}
+.reference-app .studio-publish{padding:24px;border-top:1px solid var(--border);background:#f8fbff;border-radius:0 0 24px 24px;display:flex;flex-direction:column;gap:16px}
+.reference-app .publish-total{display:flex;justify-content:space-between;align-items:center;gap:16px}.reference-app .publish-total h2{font-size:16px;line-height:23px;margin-top:5px}.reference-app .publish-total h2>span{font-size:13px;font-weight:400;color:#526879}.reference-app .publish-total small{font-size:13px;color:#526879}.reference-app .publish-total>div:last-child{text-align:right;display:flex;flex-direction:column;color:#0a66c2}.reference-app .publish-total b{font-size:28px;line-height:34px;letter-spacing:-.8px}.reference-app .publish-total>div:last-child>span{font-size:11px;color:#526879}
+.reference-app .studio-publish-actions{display:flex;gap:8px}.reference-app .studio-publish-actions>.button{flex:1}.reference-app .studio-publish>.button{height:44px;border-radius:11px}.reference-app .studio-publish>p{font-size:11px;line-height:18px;text-align:center;color:#526879;margin:0}
+@media(max-width:700px){
+ .reference-app .studio-column{width:100%;max-width:none;margin:0;padding-bottom:100px;background:white}.reference-app .studio-header{height:68px;padding:0 20px;background:white;border-bottom:1px solid var(--border)}.reference-app .studio-surface{border:0;border-radius:0;box-shadow:none}.reference-app .studio-topline{padding:20px 20px 0;font-size:10px}.reference-app .studio-author{padding:22px 20px 0}.reference-app .studio-compose{padding:20px;gap:20px}.reference-app .studio-compose .question-input{font-size:22px;line-height:29px;min-height:58px}.reference-app .studio-draft-tools{gap:12px}.reference-app .studio-draft-tools>span{font-size:11px}.reference-app .studio-formats{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.reference-app .studio-formats>button{min-height:104px;padding:13px;gap:3px}.reference-app .studio-formats small{font-size:11px}.reference-app .studio-formats>button>.icon{width:22px!important;height:22px!important;margin-bottom:6px}.reference-app .studio-options .editable-option{gap:8px}.reference-app .option-letter{width:26px;height:26px}.reference-app .studio-options>.button{margin-left:34px;width:calc(100% - 34px)}.reference-app .interaction-modes>button{padding:12px}.reference-app .interaction-modes small{font-size:11px}.reference-app .studio-settings{padding:0 20px 22px}.reference-app .studio-disclosure>summary{padding:20px;flex-wrap:wrap;gap:8px}.reference-app .studio-disclosure>summary>small{font-size:11px}.reference-app .studio-publish{padding:22px 20px}.reference-app .publish-total h2>span{display:block}.reference-app .studio-preview-body{padding:20px 14px 16px}.reference-app .studio-preview>header{padding:13px 14px}
+ .reference-app .page-tabs,.reference-app .settings .page-tabs{gap:0;padding:0;display:flex;flex-wrap:wrap}.reference-app .settings .page-tabs button{background:white;border:0;border-bottom:2px solid transparent;border-radius:0;padding:13px 8px;font-size:13px;min-height:48px;flex:1}.reference-app .settings .page-tabs button.active{border-color:#0a66c2;background:white;color:#0a66c2}.reference-app .page-title-row .select-trigger{max-width:105px;font-size:14px;min-height:40px}.reference-app .discover-toolbar .select-trigger{font-size:12px;padding:5px 6px}.reference-app .header-balance{min-height:34px}.reference-app .feed-composer>.button{font-size:13px;padding:6px 12px;min-height:34px}.reference-app .page-header-actions>.icon-button{width:40px;height:40px;padding:8px}.reference-app .feed-actions>.button{font-size:12px}.reference-app .classic-option{padding:12px;font-size:13px}.reference-app .poll-surface .visual-option>span{font-size:13px}.reference-app .segmented>button{font-size:13px}.reference-app .discover-view-switch>button{font-size:12px;min-height:38px;padding:6px 10px}
+}
+@media(max-width:360px){.reference-app .page-title-row .select-trigger{max-width:105px}.reference-app .studio-draft-tools{gap:10px}.reference-app .studio-draft-tools>.button{font-size:11px}.reference-app .studio-draft-tools>.icon-button{display:none}.reference-app .studio-options .editor-image-grid{grid-template-columns:1fr}.reference-app .studio-options .editor-image>img{height:220px}.reference-app .studio-preview-body .visual-options{grid-template-columns:1fr}.reference-app .studio-preview-body .visual-option>img{height:190px}.reference-app .feed-composer>.button{font-size:12px;padding:5px 10px}}
+
+/* Keep reused legacy containers from changing Poll Pool controls. */
+.reference-app .switch>.pool-choice-mark{width:22px;height:22px;transform:none;box-shadow:none;transition:background .15s,border-color .15s}
+.reference-app .studio-options .editor-text-options{margin-bottom:0}
+.reference-app .studio-transcript,.reference-app .studio-settings .content-settings>label{display:flex;flex-direction:column;gap:8px;font-size:13px;line-height:20px}
+.reference-app .studio-transcript textarea{width:100%;min-height:100px}
+.reference-app .studio-options>.editor-text-options>.media-input{margin:0 0 2px}
+.reference-app .studio-settings .stepper{background:white;border:1px solid #d9e7f0;border-radius:10px;flex-shrink:0}
+.reference-app .studio-settings .stepper input{border:0;border-inline:1px solid #d9e7f0;border-radius:0;min-height:44px;width:54px;padding:8px 4px;font-size:14px}
+.reference-app .studio-settings .stepper button{min-height:44px;min-width:36px;font-size:18px;color:#0a66c2;padding:8px}
+.reference-app .studio-preview .classic-option{border-color:#d1e0ed;border-radius:11px;padding:12px;color:#29465f}
+.reference-app .studio-preview .classic-option .pool-choice-mark{order:2;margin-left:auto}
+.reference-app .studio-preview .classic-option.selected{border-color:#0a66c2;color:#004182}
+
+.reference-app .check-row{font-size:13px;line-height:20px;color:#526879;gap:10px}
+.reference-app .pool-checkbox{position:relative;display:inline-grid;place-items:center;width:22px;height:22px;flex:0 0 22px;margin-top:0}
+.reference-app .check-row .pool-checkbox input{position:absolute;opacity:0;width:22px;height:22px;inset:0;margin:0;cursor:pointer;z-index:1}
+.reference-app .central-checkbox{display:grid;place-items:center;width:22px;height:22px;border:1px solid #8a9dad;border-radius:6px;background:white;color:transparent}
+.reference-app .pool-checkbox input:checked+.central-checkbox{background:#0a66c2;border-color:#0a66c2;color:white}
+.reference-app .pool-checkbox input:focus-visible+.central-checkbox{outline:2px solid #0a66c2;outline-offset:3px}
+.reference-app .pool-checkbox input:disabled+.central-checkbox{opacity:.5}
+.reference-app .slider-question input[type=range],.reference-app .audio-control input[type=range]{appearance:none;min-height:6px;height:6px;border:0;border-radius:10px;padding:0;background:linear-gradient(to right,#0a66c2 var(--range-fill,0%),#d8e6f4 var(--range-fill,0%));margin:10px 0;display:block;cursor:pointer}
+.reference-app input[type=range]::-webkit-slider-thumb{appearance:none;width:22px;height:22px;border:3px solid white;background:#0a66c2;border-radius:50%;box-shadow:0 1px 5px #204e7440,0 0 0 1px #b3cde6;cursor:grab}
+.reference-app input[type=range]::-moz-range-thumb{width:17px;height:17px;border:3px solid white;background:#0a66c2;border-radius:50%;box-shadow:0 1px 5px #204e7440;cursor:grab}
+.reference-app input[type=range]:focus-visible{outline:2px solid #0a66c2;outline-offset:6px}
+.reference-app input[type=range]:active::-webkit-slider-thumb{cursor:grabbing;box-shadow:0 0 0 5px #0a66c219}
+
+/* Exact source values, shared by every route. */
+.reference-app .workspace-pill{gap:8px;border-radius:32px}
+.reference-app .workspace-link{gap:5px}
+.reference-app .button:disabled{color:#a1a1a1;background:#f8f8f8;border-color:#e7e7e7}
+.reference-app .button.text,.reference-app .button.ghost{font-weight:500;gap:6px;border:0;min-height:0}
+.reference-app .page-title-row .select-trigger{font-size:18px}
+.reference-app .badge,.reference-app .ai-label{border:0;border-radius:12px;font-size:11px;line-height:16px;font-weight:400;background:#f0f6fa;color:#526879}
+.reference-app .ai-label{color:#70548f;background:#f3effc}
+.reference-app .feed-composer{padding:22px 24px 20px;background:linear-gradient(110deg,#f7fbfe,#fff 80%)}
+.reference-app .format-preferences>button{position:relative;display:flex;align-items:flex-start;flex-direction:column;gap:4px;padding:15px}
+.reference-app .format-preferences>button>span:not(.icon):not(.format-check){padding-right:25px}
+.reference-app .format-check{position:absolute;right:14px;top:14px;border:0;background:none;color:transparent}
+.reference-app .format-preferences>button[aria-pressed=true] .format-check{background:#0a66c2;color:white}
+.reference-app .switch>.central-checkbox{width:22px;height:22px;transform:none;box-shadow:none;border-radius:6px;background:white;color:transparent}
+.reference-app .switch.on>.central-checkbox{background:#0a66c2;border-color:#0a66c2;color:white}
+.reference-app .classic-option>.pool-choice-mark{order:2;margin-left:auto;border-color:#b5d0e2}
+.reference-app .classic-option.selected>.pool-choice-mark{border-color:#0a66c2}
+.reference-app .studio-disclosure>summary{font-weight:600}
+.reference-app .studio-disclosure>summary small{font-weight:400}
+.reference-app .studio-publish{background:linear-gradient(135deg,#f7faff,#fff 80%)}
+.reference-app .modal{width:calc(100% - 32px);max-width:620px;border-radius:20px;padding:24px;border:1px solid #d9ebf6;box-shadow:0 18px 80px #143a5530;max-height:calc(100dvh - 40px)}
+.reference-app .modal>header{border-bottom:1px solid #e1edf4;padding-bottom:20px;margin-bottom:20px;gap:16px}
+.reference-app .modal>header h2{font-size:17px;line-height:24px;font-weight:600;color:#2b5b76}
+.reference-app .modal-shade{background:#14384e66;padding:0}
+.reference-app .audio-control{display:flex;align-items:center;gap:14px;padding:16px;background:transparent;border:0;border-radius:0;flex-wrap:nowrap}
+.reference-app .audio-play{display:flex;justify-content:center;gap:7px;border:1px solid #d3e1f0;border-radius:10px;background:#edf5fd;color:#0a66c2;height:40px;width:auto;padding:8px 11px;font-size:12px;font-weight:600;min-width:83px;flex:0 0 auto}
+.reference-app .audio-play:hover{border-color:#88b4e0;background:#e3effc}
+.reference-app .audio-track{flex:1;min-width:0}.reference-app .audio-clock{display:flex;justify-content:space-between;font-size:10px;line-height:15px;color:#526879;white-space:nowrap;margin:0}
+.reference-app .audio-control input[type=range]{height:4px;min-height:4px;margin:12px 0}
+.reference-app .audio-control input::-webkit-slider-thumb{width:14px;height:14px;border-width:2px}
+.reference-app .audio-control input::-moz-range-thumb{width:10px;height:10px;border-width:2px}
+@media(max-width:700px){
+ .reference-app .workspace-pill{gap:4px;border-radius:36px}.reference-app .workspace-link{gap:2px}
+ .reference-app .studio-header{height:64px}.reference-app .page-title-row .select-trigger{font-size:16px}
+ .reference-app .feed-composer{padding:20px}.reference-app .modal{padding:22px;max-height:calc(100dvh - 32px)}
+ .reference-app .audio-control{padding:14px 12px;gap:10px}
+}
+@media(max-width:360px){.reference-app .page-title-row .select-trigger{font-size:14px}.reference-app .feed-composer{padding:18px 16px}}
+
+/* Poll Pilled has five settings sections rather than the reference's three. */
+@media(max-width:700px){
+ .reference-app .settings .page-tabs{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));border-radius:0;box-shadow:none}
+ .reference-app .settings .page-tabs>button{grid-column:span 2;min-width:0}
+ .reference-app .settings .page-tabs>button:nth-child(n+4){grid-column:span 3}
+ .reference-app .format-preferences{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+
+.reference-app .main-scroll .page-header h2{font-size:20px;line-height:25px;font-weight:600;letter-spacing:-.35px}
+.reference-app .earnings-card{background:linear-gradient(135deg,#004182 0%,#0a66c2 100%);color:white}
+.reference-app .earnings-card .wallet-number,.reference-app .earnings-card .wallet-number>span,.reference-app .earnings-card .quiet-label,.reference-app .earnings-card .earnings-main p,.reference-app .earnings-card .earnings-status small{color:white}
+.reference-app .earnings-card .earnings-status{border-color:#ffffff30}
+.reference-app .earnings-card .button{background:white;border-color:white;color:#0a66c2;box-shadow:none}
+.reference-app .earnings-card .button:hover:not(:disabled){background:#edf5fd;border-color:#edf5fd;color:#004182}
+@media(max-width:360px){.reference-app .main-scroll .page-header h2{font-size:18px}}
+
+.reference-app .studio-upload{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-top:4px;border:1px dashed #cde5f4;border-radius:12px;padding:14px;font-size:13px;color:#658ca5;background:#f9fcff}
+.reference-app .studio-upload>div{flex:1;min-width:120px}.reference-app .studio-upload small{display:block;font-size:11px;line-height:19px;color:#526879}
+.reference-app .studio-upload .button{margin-left:auto;padding:6px 12px;font-size:12px;min-height:32px}
+.reference-app .studio-files-list{font-size:11px;line-height:18px;color:#526879;margin:0}
+@media(max-width:700px){.reference-app .studio-upload{padding:12px}.reference-app .studio-upload .button{margin-left:0}}
+
+.reference-app .earnings-card .card-overline>span:first-child{color:white}
+@media(max-width:360px){.reference-app .page-title-row .select-trigger{max-width:100px}.reference-app .discover-toolbar .select-trigger{gap:4px;padding:5px 4px}}
+
+
+/* Feedback and input refinements reuse the Poll Pool palette and controls. */
+.reference-app .studio-options .editable-option textarea{height:46px;min-height:46px;resize:none;overflow:hidden;line-height:21px}
+.reference-app .studio-options .editable-option{align-items:flex-start}
+.reference-app .studio-options .option-letter{margin-top:9px}
+.reference-app .studio-options .editable-option>.icon-button{margin-top:7px;flex-shrink:0}
+.reference-app .studio-name>input{border-bottom:1px solid transparent!important;border-radius:0;padding:4px 0!important;transition:border-color .15s}
+.reference-app .studio-name>input:hover{border-bottom-color:#d5e1eb!important}
+.reference-app .studio-name>input:focus-visible{border-bottom-color:#0a66c2!important;box-shadow:none}
+.reference-app .studio-estimate{min-height:19px;display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap}
+.reference-app .studio-estimate small{font-size:11px;color:var(--muted)}
+.reference-app .studio-readiness{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:6px 14px;padding:12px 14px;border:1px solid #d9e7f0;border-radius:12px;background:#f0f6fa;font-size:12px;line-height:19px;color:#375c7c}
+.reference-app .studio-readiness>span{display:flex;align-items:center;gap:8px;flex:1;min-width:160px}
+.reference-app .studio-readiness>span>.icon,.reference-app .studio-readiness .pool-choice-mark{flex-shrink:0}
+.reference-app .studio-readiness>.button{font-size:12px;white-space:nowrap}
+.reference-app .studio-readiness.ready{background:transparent;border:0;padding:0;color:#526879}
+.reference-app .answer-audio-empty{display:flex;align-items:center;gap:12px;padding:16px;border:1px dashed #cddff1;border-radius:12px;background:#f0f6fa;color:#526879}
+.reference-app .answer-audio-empty b,.reference-app .answer-audio-empty small{display:block;font-size:12px;line-height:19px}.reference-app .answer-audio-empty small{font-size:11px;font-weight:400}
+.reference-app .answer-image-empty{min-height:160px;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:10px;color:#526879;background:#edf5fd;font-size:12px}
+.reference-app .slider-question{padding:24px 18px;min-height:220px;border-radius:12px}
+.reference-app .slider-question .big-response{font-size:22px;line-height:29px;overflow-wrap:anywhere;margin-bottom:24px}
+.reference-app .slider-question.unanswered .big-response{font-size:18px;color:#526879}
+.reference-app .slider-question.unanswered input[type=range]{background:#d8e6f4}
+.reference-app .slider-question.unanswered input::-webkit-slider-thumb{background:#8a9dad}
+.reference-app .slider-question.unanswered input::-moz-range-thumb{background:#8a9dad}
+.reference-app .rating-steps{display:flex;justify-content:space-between;gap:0;margin:8px -8px 0}
+.reference-app .rating-steps>button{display:grid;place-items:center;min-width:44px;min-height:44px;padding:6px;background:transparent;border:0;color:#526879}
+.reference-app .rating-steps>button>span{display:grid;place-items:center;width:30px;height:30px;border:1px solid #cddff1;border-radius:50%;background:white;font-size:12px;font-weight:600;transition:background .15s,border-color .15s,color .15s}
+.reference-app .rating-steps>button:hover:not(:disabled)>span{border-color:#0a66c2;color:#0a66c2;background:#edf5fd}
+.reference-app .rating-steps>button[aria-pressed=true]>span{background:#0a66c2;color:white;border-color:#0a66c2}
+.reference-app .range-labels{font-size:12px;line-height:19px;gap:20px}.reference-app .range-labels>span{max-width:45%;overflow-wrap:anywhere}.reference-app .range-labels>span:last-child{text-align:right}
+.reference-app .ranking-option>div[hidden]{display:none}
+.reference-app .ranking-option>div{flex-shrink:0;display:flex}
+.reference-app .ranking-option>div>.icon-button{min-width:40px;min-height:44px}
+.reference-app .studio-preview-body .ranking-options{margin-top:16px}
+.reference-app .studio-preview-body .ranking-options>p{font-size:12px;line-height:19px;color:#526879;margin-bottom:12px}
+.reference-app .studio-disclosure>summary:hover{background:#f8fbff}
+.reference-app .studio-disclosure>summary>.icon{transition:transform .18s}
+.reference-app .classic-option,.reference-app .visual-option{transition:border-color .15s,background .15s,box-shadow .15s}
+@media(max-width:700px){.reference-app .studio-preview-body .slider-question{padding:22px 12px;min-height:210px}}
+@media(prefers-reduced-motion:reduce){.reference-app .rating-steps>button>span,.reference-app .studio-disclosure>summary>.icon,.reference-app .classic-option,.reference-app .visual-option{transition:none}}

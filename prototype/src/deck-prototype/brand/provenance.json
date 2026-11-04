@@ -1,0 +1,9 @@
+{
+  "tool": "built-in image_gen",
+  "brief": "Poll Pilled brand logo: three rounded bar-chart columns with sparks above them. Monochrome, transparent, no surrounding capsule.",
+  "master": "poll-pilled-spark-master.png",
+  "app_asset": "poll-pilled-spark-mark.png",
+  "favicon": "poll-pilled-spark-favicon.svg",
+  "usage": "Alpha mask follows current theme color; application mark is bundled inline to avoid a separate logo fetch. Master preserved; resized delivery derivatives use sips.",
+  "supersedes": "poll-pilled-master.png"
+}

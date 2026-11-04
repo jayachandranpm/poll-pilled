@@ -1,0 +1,101 @@
+/* Poll Pilled's single design system. Use these tokens in every view, including the editor. */
+:root {
+  color-scheme: light;
+  --font-family: Inter, ui-sans-serif, system-ui, sans-serif;
+  --surface: #ffffff;
+  --text: #1b2f42;
+  --muted: #5b7184;
+  --accent: #007db8;
+  --accent-strong: #0369a1;
+  --tint: #f0f9ff;
+  --tint-strong: #dff1fc;
+  --soft: #f6fafd;
+  --canvas: #f4f9fc;
+  --border: #d8e5ee;
+  --border-strong: #aacde2;
+  --focus: #0284c7;
+  --shadow-color: rgb(31 76 108 / 10%);
+  --overlay: rgb(27 47 66 / 24%);
+  --shadow-control: 0 2px 7px var(--shadow-color);
+  --shadow-panel: 0 12px 36px var(--shadow-color);
+  --circle-everyday: #0284c7;
+  --circle-design: #38bdf8;
+  --circle-food: #0ea5e9;
+  --circle-work: #7dd3fc;
+  --text-xs: 12px;
+  --text-sm: 14px;
+  --text-md: 16px;
+  --text-lg: 18px;
+  --text-xl: 20px;
+  --heading-sm: 22px;
+  --heading-md: 24px;
+  --heading-lg: 26px;
+  --heading-xl: 28px;
+  --heading-2xl: 30px;
+  --display-sm: 32px;
+  --display-lg: 40px;
+  --number-md: 42px;
+  --number-lg: 48px;
+  --radius-sm: 8px;
+  --radius-control: 12px;
+  --radius-card: 18px;
+  --control-height: 48px;
+  --tap-target: 44px;
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+}
+
+/* Bluesky ALF palette; shared by every page and overlay. */
+@font-face{font-family:InterVariable;src:url('/assets/bluesky/InterVariable.woff2') format('woff2');font-weight:300 1000;font-style:normal;font-display:swap}
+.reference-app{
+ --font-family:InterVariable,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+ --surface:#fff;--canvas:#fff;--sidebar-surface:#fff;--text:#000;--muted:#526580;
+ --accent:#006aff;--accent-strong:#0059d6;--action:#006aff;--action-hover:#0059d6;
+ --tint:#e5f0ff;--tint-strong:#cce1ff;--soft:#eff2f6;--hover:#f9fafb;
+ --border:#dce2ea;--border-strong:#c0cad8;--focus:#006aff;--overlay:rgb(0 0 0 / 80%);
+ --shadow-color:rgb(0 0 0 / 10%);--shadow-control:0 2px 4px rgb(0 0 0 / 5%);--shadow-panel:0 10px 15px -3px rgb(0 0 0 / 10%),0 4px 6px -4px rgb(0 0 0 / 10%);
+ --pastel-mint:#e5f0ff;--pastel-peach:#eff2f6;--pastel-pink:#eff2f6;--pastel-blue:#e5f0ff;
+ --text-xs:13px;--text-sm:14px;--text-md:15px;--text-lg:17px;--text-xl:20px;
+ --heading-sm:18px;--heading-md:20px;--heading-lg:22px;--heading-xl:24px;--heading-2xl:26px;
+ --display-sm:28px;--display-lg:32px;--number-md:40px;--number-lg:48px;
+ --radius-card:12px;--radius-control:8px;--control-height:44px;--space-7:40px;--space-8:48px;
+ color-scheme:light;
+}
+.reference-app[data-color-mode=dark]{color-scheme:dark;--surface:#151d28;--canvas:#151d28;--sidebar-surface:#151d28;--text:#fff;--muted:#abb8c9;--soft:#222e3f;--hover:#1c2736;--border:#2c3a4e;--border-strong:#485b75;--accent:#0f73ff;--accent-strong:#80b5ff;--action:#0f73ff;--action-hover:#0661e0;--tint:#122949;--tint-strong:#123464;--focus:#80b5ff;--pastel-mint:#122949;--pastel-peach:#222e3f;--pastel-pink:#222e3f;--pastel-blue:#122949;--overlay:rgb(0 0 0 / 80%)}
+.reference-app[data-font=system]{--font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+.reference-app[data-size=smaller]{--text-md:14px;--text-lg:16px;--text-sm:13px}
+.reference-app[data-size=larger]{--text-md:17px;--text-lg:19px;--text-sm:16px}
+/* Feedback timings are shared; no decorative loops. */
+:root { --motion-state: 150ms; --motion-panel: 200ms; }
+
+/* Bluesky ALF spacing. Source: qa/bluesky/source/alf-tokens.js.
+   Keep separate from typography, color, radii and product layout widths. */
+.reference-app {
+ --bsky-space-2xs: 2px;
+ --bsky-space-xs: 4px;
+ --bsky-space-sm: 8px;
+ --bsky-space-md: 12px;
+ --bsky-space-lg: 16px;
+ --bsky-space-xl: 20px;
+ --bsky-space-2xl: 24px;
+ --bsky-space-3xl: 28px;
+ --bsky-space-4xl: 32px;
+ --bsky-space-5xl: 40px;
+ --bsky-header-height: 52px;
+ --workspace-gutter: var(--bsky-space-xl);
+}
+
+/* Custom unDraw paint follows the same ALF palette as controls and surfaces. */
+.reference-app {
+ --art-accent:var(--accent); --art-ink:#232e3e; --art-line:#526580;
+ --art-mid:#80b5ff; --art-muted:#c0cad8; --art-tint:var(--tint-strong);
+ --art-canvas:var(--soft); --art-detail:#b2d2ff; --art-paper:var(--surface);
+}
+.reference-app[data-color-mode=dark] {
+ --art-ink:#dce2ea; --art-line:#8798b0; --art-mid:#4593ff;
+ --art-muted:#485b75; --art-detail:#80b5ff;
+}

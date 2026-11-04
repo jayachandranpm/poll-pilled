@@ -1,0 +1,2 @@
+meta.svg: Simple Icons, CC0-1.0. https://github.com/simple-icons/simple-icons
+transfer-horizontal-linear.svg, layers-minimalistic-linear.svg: Solar Icons, CC BY 4.0. https://github.com/iconify/icon-sets/blob/master/json/solar.json

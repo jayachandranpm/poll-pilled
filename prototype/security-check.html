@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="robots" content="noindex,nofollow"><meta name="theme-color" content="#8BCBFA">
+  <title>Security check · Poll Pilled</title>
+  <link rel="preconnect" href="https://challenges.cloudflare.com">
+  <link rel="stylesheet" href="/src/security-diagnostic.css">
+  <script type="module" src="/src/security-diagnostic.js"></script>
+</head>
+<body><main id="security-diagnostic">
+  <a href="/sign-in">← Back to sign in</a>
+  <h1>Check your connection</h1>
+  <p>This standalone check helps us investigate the sign-in problem. It uses the same Cloudflare widget, without the app’s dialog or retry timers.</p>
+  <p id="diagnostic-status" role="status" aria-live="polite">Loading the security check…</p>
+  <div id="diagnostic-widget"></div>
+  <button id="diagnostic-retry" type="button" hidden>Run check again</button>
+  <section aria-labelledby="result-heading"><h2 id="result-heading">Share this result</h2>
+  <p>Copy the text below into our chat. It contains no password, email, or verification token.</p>
+  <pre id="diagnostic-result">Preparing…</pre></section>
+  <p class="note">This page does not sign you in or change your account. A completed browser check still needs server verification during sign-in.</p>
+  <noscript>JavaScript must be enabled for Cloudflare Turnstile to run.</noscript>
+</main></body></html>
